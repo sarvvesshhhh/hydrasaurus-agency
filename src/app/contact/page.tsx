@@ -77,7 +77,7 @@ export default function ContactPage() {
               type="text" 
               required
               className="bg-[#0A0A0A] border border-white/10 rounded-xl px-4 py-4 text-white focus:outline-none focus:border-[#C8102E] transition-colors" 
-              placeholder="John Doe"
+              placeholder="Sarvesh Shinde"
             />
           </div>
         </div>
@@ -114,8 +114,8 @@ export default function ContactPage() {
         <div className="text-center mt-6 pt-6 border-t border-white/5">
           <span className="text-white/40 text-[10px] tracking-widest uppercase font-bold">Or email us directly at </span>
           <br />
-          <a href="mailto:hydrasaurus.agency@gmail.com" className="text-[#E3C287] text-sm hover:text-white transition-colors tracking-widest mt-2 inline-block">
-            hydrasaurus.agency@gmail.com
+          <a href="mailto:management@hydrasaurus.in" className="text-[#E3C287] text-sm hover:text-white transition-colors tracking-widest mt-2 inline-block">
+            management@hydrasaurus.in
           </a>
         </div>
 
