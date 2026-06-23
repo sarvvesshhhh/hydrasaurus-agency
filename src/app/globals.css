@@ -1,0 +1,186 @@
+@import "material-symbols/outlined.css";
+@import "tailwindcss";
+
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+
+  /* Brand Colors from Stitch Design */
+  --color-void-deep: #020202;
+  --color-void-black: #000000;
+  --color-primary-container: #c8102e;
+  --color-primary: #ffb3b1;
+  --color-surface: #050505;
+  --color-on-surface: #f5f5f5;
+  --color-secondary: #a0a0a0;
+  --color-tertiary: #808080;
+  --color-glass-stroke: rgba(255, 255, 255, 0.05);
+
+  /* Typography */
+  --font-display-lg: var(--font-sora);
+  --font-headline-lg: var(--font-sora);
+  --font-headline-md: var(--font-sora);
+  --font-body-lg: var(--font-hanken-grotesk);
+  --font-body-md: var(--font-hanken-grotesk);
+  --font-label-caps: var(--font-jetbrains-mono);
+
+  /* Custom Animations */
+  --animate-marquee: marquee 30s linear infinite;
+  --animate-flow-h: flow-h 3s linear infinite;
+  --animate-flow-v: flow-v 3s linear infinite;
+  --animate-flow-d1: flow-d1 3s linear infinite;
+  --animate-flow-d2: flow-d2 3s linear infinite;
+  --animate-flow-d3: flow-d3 3s linear infinite;
+  --animate-flow-d4: flow-d4 3s linear infinite;
+
+  @keyframes marquee {
+    0% { transform: translateX(0%); }
+    100% { transform: translateX(-100%); }
+  }
+  @keyframes flow-h {
+    0% { transform: translateX(-100%); opacity: 0; }
+    50% { opacity: 1; }
+    100% { transform: translateX(100%); opacity: 0; }
+  }
+  @keyframes flow-v {
+    0% { transform: translateY(-100%); opacity: 0; }
+    50% { opacity: 1; }
+    100% { transform: translateY(100%); opacity: 0; }
+  }
+  @keyframes flow-d1 {
+    0% { transform: translate(-100%, -100%); opacity: 0; }
+    50% { opacity: 1; }
+    100% { transform: translate(100%, 100%); opacity: 0; }
+  }
+  @keyframes flow-d2 {
+    0% { transform: translate(100%, -100%); opacity: 0; }
+    50% { opacity: 1; }
+    100% { transform: translate(-100%, 100%); opacity: 0; }
+  }
+  @keyframes flow-d3 {
+    0% { transform: translate(-100%, 100%); opacity: 0; }
+    50% { opacity: 1; }
+    100% { transform: translate(100%, -100%); opacity: 0; }
+  }
+  @keyframes flow-d4 {
+    0% { transform: translate(100%, 100%); opacity: 0; }
+    50% { opacity: 1; }
+    100% { transform: translate(-100%, -100%); opacity: 0; }
+  }
+}
+
+:root {
+  --background: #000000;
+  --foreground: #f5f5f5;
+}
+
+body {
+  background-color: var(--background);
+  color: var(--foreground);
+  overflow-x: hidden;
+  font-family: var(--font-hanken-grotesk), sans-serif;
+  -webkit-font-smoothing: antialiased;
+}
+
+h1, h2, h3, h4, h5, h6, .font-display-lg, .font-headline-lg, .font-headline-md {
+  font-family: var(--font-sora), sans-serif;
+  letter-spacing: -0.03em;
+}
+
+.font-label-caps {
+  font-family: var(--font-jetbrains-mono), monospace;
+  letter-spacing: 0.1em;
+}
+
+/* Custom Scrollbar for Roster */
+.roster-scroll::-webkit-scrollbar {
+  width: 2px;
+}
+.roster-scroll::-webkit-scrollbar-track {
+  background: transparent;
+}
+.roster-scroll::-webkit-scrollbar-thumb {
+  background: rgba(255, 255, 255, 0.2);
+}
+
+.editorial-border {
+  border-top: 1px solid rgba(255,255,255,0.1);
+}
+
+.grid-pattern {
+  background-image: linear-gradient(rgba(255,255,255,0.03) 1px, transparent 1px),
+  linear-gradient(90deg, rgba(255,255,255,0.03) 1px, transparent 1px);
+  background-size: 40px 40px;
+}
+
+.dragon-eye-glow {
+  position: absolute;
+  width: 20px;
+  height: 20px;
+  background-color: #c8102e;
+  border-radius: 50%;
+  filter: blur(15px);
+  opacity: 0.8;
+  animation: pulse-glow 4s ease-in-out infinite alternate;
+  top: 48%;
+  left: 55%;
+  z-index: 1;
+}
+
+@keyframes pulse-glow {
+  0% { opacity: 0.4; transform: scale(0.8); }
+  100% { opacity: 0.9; transform: scale(1.5); }
+}
+
+.glow-line {
+  position: absolute;
+  background: #c8102e;
+  box-shadow: 0 0 10px #c8102e, 0 0 20px #c8102e;
+  z-index: 10;
+}
+
+.command-node {
+  position: absolute;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 8px;
+  z-index: 20;
+}
+
+.command-icon-box {
+  width: 48px;
+  height: 48px;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  background: #000;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transform: rotate(45deg);
+  transition: border-color 0.3s;
+}
+
+.command-icon-box:hover {
+  border-color: #c8102e;
+}
+
+.command-icon-box span {
+  transform: rotate(-45deg);
+  color: #fff;
+  transition: color 0.3s;
+}
+
+.command-icon-box:hover span {
+  color: #c8102e;
+}
+
+.command-label {
+  font-family: var(--font-jetbrains-mono), monospace;
+  font-size: 10px;
+  color: #fff;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  text-align: center;
+  white-space: nowrap;
+}
+
