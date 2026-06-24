@@ -175,7 +175,7 @@ export const rosterData: Record<string, Creator> = {
     youtubeChannelId: "UCRaNlzqMtgAetZRuYDDdlTw",
     youtubeUrl: "https://youtube.com/@DeepZ9K",
     kickUrl: "https://kick.com/deepz9k",
-    isKickPartner: true
+    isKickPartner: false
   },
   damaskplays: {
     slug: "damaskplays",
@@ -211,7 +211,7 @@ export const rosterData: Record<string, Creator> = {
     joined: "TBA",
     bio: "Delivering high-octane cinematic gameplay and unparalleled FPS mastery.",
     hoverVideo: "https://cdn.coverr.co/videos/coverr-abstract-neon-waves-2253/1080p.mp4",
-    isKickPartner: true
+    isKickPartner: false
   },
   whyisselena: {
     slug: "whyisselena",
@@ -244,7 +244,7 @@ export const rosterData: Record<string, Creator> = {
     joined: "TBA",
     bio: "Pioneering visual storytelling and elite mechanical skill across the gaming spectrum.",
     hoverVideo: "https://cdn.coverr.co/videos/coverr-abstract-glowing-lines-4158/1080p.mp4",
-    isKickPartner: true
+    isKickPartner: false
   },
   radbriefing: {
     slug: "radbriefing",
