@@ -24,7 +24,7 @@ export const rosterData: Record<string, Creator> = {
     name: "PN Syed",
     subscribers: "115.0K",
     youtubeHandle: "@PNSYED",
-    youtubeChannelId: "UC9yEVL_bgYZOZIl9NJCmifw",
+    youtubeChannelId: "UC-Tbl7UT0Ffm49IeRc7CSlg",
     youtubeUrl: "https://youtube.com/@PNSYED",
     isKickPartner: true
   },
@@ -33,7 +33,7 @@ export const rosterData: Record<string, Creator> = {
     name: "iMRocky",
     subscribers: "52.0K",
     youtubeHandle: "@iMRocky",
-    youtubeChannelId: "UC7h-brAMKgiyrh_BmdhKK3w",
+    youtubeChannelId: "UCdZSSMQI6vWr3VneoNuv9SQ",
     youtubeUrl: "https://youtube.com/@iMRocky",
     isKickPartner: true
   },
@@ -51,7 +51,7 @@ export const rosterData: Record<string, Creator> = {
     name: "Asuka Bae",
     subscribers: "21.0K",
     youtubeHandle: "@AsukaBae",
-    youtubeChannelId: "UCPS5jMnsmwos955jw59Kksg",
+    youtubeChannelId: "UCDVQYp-GGoqbJWomfFaKKeg",
     youtubeUrl: "https://youtube.com/@AsukaBae",
     isKickPartner: true
   },
@@ -96,7 +96,7 @@ export const rosterData: Record<string, Creator> = {
     name: "BacKFire",
     subscribers: "19.4K",
     youtubeHandle: "@BacKFFR",
-    youtubeChannelId: "UCZJBByanwx9AcldVhxK7gVQ",
+    youtubeChannelId: "UCKeIVjp5pExBXUjwlq_GSyg",
     youtubeUrl: "https://youtube.com/@BacKFFR",
     isKickPartner: true
   },
@@ -105,7 +105,7 @@ export const rosterData: Record<string, Creator> = {
     name: "Typhon",
     subscribers: "15.5K",
     youtubeHandle: "@TYPHONisLivee",
-    youtubeChannelId: "UC9DsaOmKvy1TJ4jE4DZrj2Q",
+    youtubeChannelId: "UCADW4EcCkiXkp9ScwbsiYdA",
     youtubeUrl: "https://youtube.com/@TYPHONisLivee",
     isKickPartner: true
   },
@@ -150,7 +150,7 @@ export const rosterData: Record<string, Creator> = {
     name: "M4GOD",
     subscribers: "10.0K",
     youtubeHandle: "@m4godofficial",
-    youtubeChannelId: "UCFBZZgZOZNBB6Tqhx0GcSMA",
+    youtubeChannelId: "UCupNRQm2F_vP23nnOYkUjFw",
     youtubeUrl: "https://youtube.com/@m4godofficial",
     isKickPartner: true
   },
@@ -177,7 +177,7 @@ export const rosterData: Record<string, Creator> = {
     name: "Mxrsh",
     subscribers: "2.5K",
     youtubeHandle: "@not_marsh",
-    youtubeChannelId: "UC1rKEtH7BEyNuh2IxcNAdQg",
+    youtubeChannelId: "UCjE1jD58l0TRrh3KTY3lP0A",
     youtubeUrl: "https://youtube.com/@not_marsh",
     isKickPartner: true
   },
@@ -218,7 +218,7 @@ export const rosterData: Record<string, Creator> = {
     name: "SnFx",
     subscribers: "1.3K",
     youtubeHandle: "@SnFx_111",
-    youtubeChannelId: "UCdRzeRIBsINtuXPwGrqNysA",
+    youtubeChannelId: "UCHPdVkoLuzQA4B4atJl0ijA",
     youtubeUrl: "https://youtube.com/@SnFx_111",
     role: "Cinematic Gaming Virtuoso",
     totalViews: "TBA",
