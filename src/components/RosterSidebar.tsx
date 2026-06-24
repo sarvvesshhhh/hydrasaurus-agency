@@ -65,7 +65,10 @@ export default function RosterSidebar({ isOpen, onClose }: RosterSidebarProps) {
         </button>
       </div>
 
-      <div className="flex-1 overflow-y-auto roster-scroll px-8 py-8 flex flex-col gap-12">
+      <div 
+        className="flex-1 overflow-y-auto roster-scroll px-8 py-8 flex flex-col gap-12"
+        data-lenis-prevent
+      >
         {/* Command Staff */}
         <div>
           <h4 className="text-[10px] text-[#c8102e] uppercase tracking-widest mb-6 border-b border-white/10 pb-2 font-bold">// COMMAND STAFF</h4>
