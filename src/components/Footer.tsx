@@ -16,24 +16,30 @@ export default function Footer() {
           </div>
           <div className="flex flex-col gap-4">
             <h5 className="font-label-caps text-[10px] text-[#c8102e] uppercase tracking-widest mb-2">Index Database</h5>
-            <Link className="font-label-caps text-[10px] text-secondary hover:text-white transition-colors uppercase" href="#">
+            <Link className="font-label-caps text-[10px] text-secondary hover:text-white transition-colors uppercase" href="/directory">
               Directory
             </Link>
-            <Link className="font-label-caps text-[10px] text-secondary hover:text-white transition-colors uppercase" href="#">
+            <Link className="font-label-caps text-[10px] text-secondary hover:text-white transition-colors uppercase" href="/operations">
               Operations
             </Link>
-            <Link className="font-label-caps text-[10px] text-secondary hover:text-white transition-colors uppercase" href="#">
+            <Link className="font-label-caps text-[10px] text-secondary hover:text-white transition-colors uppercase" href="/logistics">
               Logistics
             </Link>
           </div>
           <div className="flex flex-col gap-4">
             <h5 className="font-label-caps text-[10px] text-[#c8102e] uppercase tracking-widest mb-2">External Relays</h5>
-            <Link className="font-label-caps text-[10px] text-secondary hover:text-white transition-colors uppercase" href="#">
+            <a className="font-label-caps text-[10px] text-secondary hover:text-white transition-colors uppercase" href="https://www.instagram.com/hydrasaurus.agency" target="_blank" rel="noopener noreferrer">
+              Instagram
+            </a>
+            <a className="font-label-caps text-[10px] text-secondary hover:text-white transition-colors uppercase" href="https://discord.gg/3wGeSwkcVx" target="_blank" rel="noopener noreferrer">
+              Discord
+            </a>
+            <a className="font-label-caps text-[10px] text-secondary hover:text-white transition-colors uppercase" href="https://www.linkedin.com/in/sarvvesshhhh" target="_blank" rel="noopener noreferrer">
               LinkedIn
-            </Link>
-            <Link className="font-label-caps text-[10px] text-secondary hover:text-white transition-colors uppercase" href="#">
-              X / Twitter
-            </Link>
+            </a>
+            <a className="font-label-caps text-[10px] text-secondary hover:text-white transition-colors uppercase" href="https://youtube.com/@hydrasaurus" target="_blank" rel="noopener noreferrer">
+              YouTube
+            </a>
           </div>
         </div>
         <div className="pt-8 border-t border-white/10 flex flex-col md:flex-row justify-between items-center gap-4">
