@@ -1,8 +1,33 @@
 'use client';
 
-import React from 'react';
+import React, { useState, useEffect } from 'react';
+import Link from 'next/link';
 
 export default function Home() {
+  const [portfolioStats, setPortfolioStats] = useState<Record<string, { avatarUrl?: string; subscribers?: string }>>({});
+
+  useEffect(() => {
+    async function loadPortfolio() {
+      try {
+        const res = await fetch('/api/portfolio');
+        if (res.ok) {
+          const data = await res.json();
+          setPortfolioStats(data);
+        }
+      } catch (err) {
+        console.error("Failed to load portfolio stats:", err);
+      }
+    }
+    loadPortfolio();
+  }, []);
+
+  const handleAccessDirectory = () => {
+    const toggleBtn = document.getElementById('sidebar-toggle');
+    if (toggleBtn) {
+      toggleBtn.click();
+    }
+  };
+
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
     alert('Terminal uplink secured. Dossier transmitted successfully.');
@@ -256,17 +281,21 @@ export default function Home() {
             <span className="w-8 h-[1px] bg-[#c8102e]"></span>
             <h2 className="font-label-caps text-[10px] text-secondary tracking-widest uppercase">Client Portfolio Deployment</h2>
           </div>
-          <button className="font-label-caps text-[10px] text-white hover:text-[#c8102e] transition-colors uppercase border-b border-transparent hover:border-[#c8102e] pb-1 cursor-pointer bg-transparent">
+          <button 
+            onClick={handleAccessDirectory}
+            className="font-label-caps text-[10px] text-white hover:text-[#c8102e] transition-colors uppercase border-b border-transparent hover:border-[#c8102e] pb-1 cursor-pointer bg-transparent"
+          >
             Access Full Directory
           </button>
         </div>
+
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-16">
-          {/* Portfolio Asset 1: Zane */}
-          <div className="group cursor-pointer flex flex-col border border-white/10 hover:border-white/30 transition-colors bg-void-black">
+          {/* Portfolio Asset 1: DollyIsLive */}
+          <Link href="/talent/dollyislive" className="group cursor-pointer flex flex-col border border-white/10 hover:border-white/30 transition-colors bg-void-black">
             <div className="p-6 border-b border-white/10 flex justify-between items-start">
               <div>
-                <h3 className="font-display-lg text-3xl text-white uppercase tracking-tighter mb-1 font-bold">ZANE</h3>
-                <span className="font-label-caps text-[9px] text-[#c4c7ca] uppercase tracking-widest block">Asset Class: Elite RP</span>
+                <h3 className="font-display-lg text-3xl text-white uppercase tracking-tighter mb-1 font-bold">DOLLYISLIVE</h3>
+                <span className="font-label-caps text-[9px] text-[#c4c7ca] uppercase tracking-widest block">Asset Class: Streamer & Esports</span>
               </div>
               <div className="px-2 py-1 border border-[#c8102e]/50 bg-[#c8102e]/10 text-[#c8102e] font-label-caps text-[8px] uppercase tracking-widest flex items-center gap-2">
                 <span className="w-1.5 h-1.5 rounded-full bg-[#c8102e] animate-pulse"></span> Verified
@@ -274,16 +303,16 @@ export default function Home() {
             </div>
             <div className="relative aspect-[4/3] overflow-hidden bg-void-deep border-b border-white/10">
               <img 
-                alt="Zane" 
+                alt="DollyIsLive" 
                 className="w-full h-full object-cover grayscale opacity-60 group-hover:opacity-100 group-hover:scale-105 transition-all duration-700 mix-blend-lighten" 
-                src="https://lh3.googleusercontent.com/aida/AP1WRLvD_IonGqo657628mzDxB9V5Myi83CUI3H3gzTlTa9zE6tkPRFpjLrOLVZJ9Jal2u2IRBuUvtUf9j1NWmne4Op6UJVDYKoocY8o0NZUfcFUgtECuowVotMj3ACLw9ZJYmGF1v_yRjKuMUQLyFpENd91uYZx7DbGyy1R7sFclDtNeWgxmzxPBQCaI8wkxub54amTnRcfhKecrW0T3NIsOUkxEq5kptWOCDqHKoDzStU7VUlHunMEsvTr9BdR"
+                src="/dolly.png"
               />
               <div className="absolute inset-0 bg-gradient-to-t from-black via-transparent to-transparent opacity-80"></div>
             </div>
             <div className="p-6 grid grid-cols-2 gap-y-6 font-label-caps text-[10px] uppercase">
               <div className="flex flex-col gap-1">
                 <span className="text-[#c8102e] tracking-widest font-bold">Base Metric</span>
-                <span className="text-white text-base">14.2K CCV</span>
+                <span className="text-white text-base">{portfolioStats.dollyislive?.subscribers || "13.9K"} Subs</span>
               </div>
               <div className="flex flex-col gap-1">
                 <span className="text-[#c8102e] tracking-widest font-bold">MoM Delta</span>
@@ -291,34 +320,34 @@ export default function Home() {
               </div>
               <div className="flex flex-col gap-1 col-span-2">
                 <span className="text-[#c8102e] tracking-widest font-bold">Primary Vector</span>
-                <span className="text-white text-sm">YouTube Live Ecosystem</span>
+                <span className="text-white text-sm">YouTube & Kick Ecosystem</span>
               </div>
             </div>
-          </div>
+          </Link>
 
-          {/* Portfolio Asset 2: Nova */}
-          <div className="group cursor-pointer flex flex-col border border-white/10 hover:border-white/30 transition-colors bg-void-black">
+          {/* Portfolio Asset 2: WhyisSelena */}
+          <Link href="/talent/whyisselena" className="group cursor-pointer flex flex-col border border-white/10 hover:border-white/30 transition-colors bg-void-black">
             <div className="p-6 border-b border-white/10 flex justify-between items-start">
               <div>
-                <h3 className="font-display-lg text-3xl text-white uppercase tracking-tighter mb-1 font-bold">NOVA</h3>
-                <span className="font-label-caps text-[9px] text-[#c4c7ca] uppercase tracking-widest block">Asset Class: Variety</span>
+                <h3 className="font-display-lg text-3xl text-white uppercase tracking-tighter mb-1 font-bold">WHYISSELENA</h3>
+                <span className="font-label-caps text-[9px] text-[#c4c7ca] uppercase tracking-widest block">Asset Class: Variety FPS</span>
               </div>
-              <div className="px-2 py-1 border border-white/30 bg-white/5 text-white font-label-caps text-[8px] uppercase tracking-widest flex items-center gap-2">
-                <span className="w-1.5 h-1.5 rounded-full bg-white/50"></span> Verified
+              <div className="px-2 py-1 border border-[#c8102e]/50 bg-[#c8102e]/10 text-[#c8102e] font-label-caps text-[8px] uppercase tracking-widest flex items-center gap-2">
+                <span className="w-1.5 h-1.5 rounded-full bg-[#c8102e] animate-pulse"></span> Verified
               </div>
             </div>
             <div className="relative aspect-[4/3] overflow-hidden bg-void-deep border-b border-white/10">
               <img 
-                alt="Nova" 
+                alt="WhyisSelena" 
                 className="w-full h-full object-cover grayscale opacity-60 group-hover:opacity-100 group-hover:scale-105 transition-all duration-700 mix-blend-lighten" 
-                src="https://lh3.googleusercontent.com/aida/AP1WRLsc-RrNN955n64EpPeA-1KHO8fMOK1oHBvNMvmKPOqRATv7cftek3rRmuDgcZkAC4Q6U5l2mjZd-bcQ18EZDLAVvCM9V-d05J4fmNLxwDvlj7-hOLD1qGJTWb8sZMMg2V8dkfFEYdRh-KMDbUQlPQNbEQ1NgBqAuA4wj01lOWWyTkTvOPMYGbiSC8Sg62EnYy1KH1_a3Kwe9t9kqmszA6AUYOBHHSm0WXcZv3tQiId4YQWcq3F-lFybGkQ"
+                src="/selena.png"
               />
               <div className="absolute inset-0 bg-gradient-to-t from-black via-transparent to-transparent opacity-80"></div>
             </div>
             <div className="p-6 grid grid-cols-2 gap-y-6 font-label-caps text-[10px] uppercase">
               <div className="flex flex-col gap-1">
                 <span className="text-[#c8102e] tracking-widest font-bold">Base Metric</span>
-                <span className="text-white text-base">8.5K CCV</span>
+                <span className="text-white text-base">{portfolioStats.whyisselena?.subscribers || "2.3K"} Subs</span>
               </div>
               <div className="flex flex-col gap-1">
                 <span className="text-[#c8102e] tracking-widest font-bold">MoM Delta</span>
@@ -326,13 +355,13 @@ export default function Home() {
               </div>
               <div className="flex flex-col gap-1 col-span-2">
                 <span className="text-[#c8102e] tracking-widest font-bold">Primary Vector</span>
-                <span className="text-white text-sm">Kick Broadcast Network</span>
+                <span className="text-white text-sm">YouTube & Kick Ecosystem</span>
               </div>
             </div>
-          </div>
+          </Link>
 
-          {/* Portfolio Asset 3: BackFire */}
-          <div className="group cursor-pointer flex flex-col border border-white/10 hover:border-white/30 transition-colors bg-void-black">
+          {/* Portfolio Asset 3: BacKFire */}
+          <Link href="/talent/backfire" className="group cursor-pointer flex flex-col border border-white/10 hover:border-white/30 transition-colors bg-void-black">
             <div className="p-6 border-b border-white/10 flex justify-between items-start">
               <div>
                 <h3 className="font-display-lg text-3xl text-white uppercase tracking-tighter mb-1 font-bold">BACKFIRE</h3>
@@ -344,16 +373,16 @@ export default function Home() {
             </div>
             <div className="relative aspect-[4/3] overflow-hidden bg-void-deep border-b border-white/10">
               <img 
-                alt="BackFire" 
+                alt="BacKFire" 
                 className="w-full h-full object-cover grayscale opacity-60 group-hover:opacity-100 group-hover:scale-105 transition-all duration-700 mix-blend-lighten" 
-                src="https://lh3.googleusercontent.com/aida/AP1WRLthz-y8Yw4F59JQJZPj95Gfnc-Z57droyOaAk-MXBfVDQIq6uwCvchy6x_wVO7Z5GOEb9rJH-aiAx-KZn7uY_ueyJDQ-WpsBX30VMDzbrEO1GZQ_NwGYRh_oRox5gHK-Q9G_tPnsy1JTAWWG0WXz6BaJJ_bpjeKuHIhwk2OXs0BbYwbalqKq0TztUTpb_zEerEcrk06w2u6j_IuI0rNKjcXzWsveGnVEA0kYc7huslYlNd_WRdHjNx0JWiz"
+                src={portfolioStats.backfire?.avatarUrl || "https://lh3.googleusercontent.com/aida/AP1WRLthz-y8Yw4F59JQJZPj95Gfnc-Z57droyOaAk-MXBfVDQIq6uwCvchy6x_wVO7Z5GOEb9rJH-aiAx-KZn7uY_ueyJDQ-WpsBX30VMDzbrEO1GZQ_NwGYRh_oRox5gHK-Q9G_tPnsy1JTAWWG0WXz6BaJJ_bpjeKuHIhwk2OXs0BbYwbalqKq0TztUTpb_zEerEcrk06w2u6j_IuI0rNKjcXzWsveGnVEA0kYc7huslYlNd_WRdHjNx0JWiz"}
               />
               <div className="absolute inset-0 bg-gradient-to-t from-black via-transparent to-transparent opacity-80"></div>
             </div>
             <div className="p-6 grid grid-cols-2 gap-y-6 font-label-caps text-[10px] uppercase">
               <div className="flex flex-col gap-1">
                 <span className="text-[#c8102e] tracking-widest font-bold">Base Metric</span>
-                <span className="text-white text-base">19.4K CCV</span>
+                <span className="text-white text-base">{portfolioStats.backfire?.subscribers || "19.4K"} Subs</span>
               </div>
               <div className="flex flex-col gap-1">
                 <span className="text-[#c8102e] tracking-widest font-bold">MoM Delta</span>
@@ -361,10 +390,10 @@ export default function Home() {
               </div>
               <div className="flex flex-col gap-1 col-span-2">
                 <span className="text-[#c8102e] tracking-widest font-bold">Primary Vector</span>
-                <span className="text-white text-sm">YouTube Live Ecosystem</span>
+                <span className="text-white text-sm">YouTube & Kick Ecosystem</span>
               </div>
             </div>
-          </div>
+          </Link>
         </div>
       </section>
 
