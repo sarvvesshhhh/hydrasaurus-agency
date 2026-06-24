@@ -1,23 +1,114 @@
 export interface Creator {
   slug: string;
   name: string;
-  role: string;
-  youtubeHandle: string;
-  youtubeChannelId: string;
-  youtubeUrl: string;
-  subscribers: string;
-  totalViews: string;
-  videos: string;
-  joined: string;
+  subscribers: string; // Static default fallback
+  youtubeHandle?: string;
+  youtubeChannelId?: string;
+  youtubeUrl?: string;
+  role?: string;
+  totalViews?: string;
+  videos?: string;
+  joined?: string;
   setup?: string;
   bio?: string;
   social?: string;
   kickUrl?: string;
   image?: string;
   hoverVideo?: string;
+  isKickPartner?: boolean;
 }
 
 export const rosterData: Record<string, Creator> = {
+  pnsyed: {
+    slug: "pnsyed",
+    name: "PN Syed",
+    subscribers: "115.0K",
+    youtubeHandle: "@PNSYED",
+    youtubeChannelId: "UC_PlaceholderPNSYED",
+    youtubeUrl: "https://youtube.com/@PNSYED",
+    isKickPartner: true,
+  },
+  imrocky: {
+    slug: "imrocky",
+    name: "iMRocky",
+    subscribers: "52.0K",
+    youtubeHandle: "@imrocky",
+    youtubeChannelId: "UC_PlaceholderiMRocky",
+    youtubeUrl: "https://youtube.com/@imrocky",
+    isKickPartner: true,
+  },
+  arnavgaming: {
+    slug: "arnavgaming",
+    name: "Arnav Gaming",
+    subscribers: "38.0K",
+    youtubeHandle: "@ARNAVGAMING",
+    youtubeChannelId: "UC_PlaceholderArnavGaming",
+    youtubeUrl: "https://youtube.com/@ARNAVGAMING",
+    isKickPartner: true,
+  },
+  radbriefing: {
+    slug: "radbriefing",
+    name: "RadBriefing",
+    subscribers: "36.5K",
+    youtubeHandle: "@RadBriefing",
+    youtubeChannelId: "UC_PlaceholderRadBriefing",
+    youtubeUrl: "https://youtube.com/@RadBriefing",
+    isKickPartner: true,
+  },
+  thedeadshot: {
+    slug: "thedeadshot",
+    name: "The Deadshot",
+    subscribers: "24.8K",
+    youtubeHandle: "@TheDeadshot",
+    youtubeChannelId: "UC_PlaceholderTheDeadshot",
+    youtubeUrl: "https://youtube.com/@TheDeadshot",
+    isKickPartner: true,
+  },
+  asukabae: {
+    slug: "asukabae",
+    name: "Asuka Bae",
+    subscribers: "21.0K",
+    youtubeHandle: "@AsukaBae",
+    youtubeChannelId: "UC_PlaceholderAsukaBae",
+    youtubeUrl: "https://youtube.com/@AsukaBae",
+    isKickPartner: true,
+  },
+  backfire: {
+    slug: "backfire",
+    name: "BacKFire",
+    subscribers: "19.4K",
+    youtubeHandle: "@backfire",
+    youtubeChannelId: "UC_PlaceholderBacKFire",
+    youtubeUrl: "https://youtube.com/@backfire",
+    isKickPartner: true,
+  },
+  eliminator: {
+    slug: "eliminator",
+    name: "Eliminator",
+    subscribers: "18.5K",
+    youtubeHandle: "@Eliminator",
+    youtubeChannelId: "UC_PlaceholderEliminator",
+    youtubeUrl: "https://youtube.com/@Eliminator",
+    isKickPartner: true,
+  },
+  typhon: {
+    slug: "typhon",
+    name: "Typhon",
+    subscribers: "15.5K",
+    youtubeHandle: "@Typhon",
+    youtubeChannelId: "UC_PlaceholderTyphon",
+    youtubeUrl: "https://youtube.com/@Typhon",
+    isKickPartner: true,
+  },
+  shreeplayz: {
+    slug: "shreeplayz",
+    name: "SHREE PlayZ",
+    subscribers: "15.0K",
+    youtubeHandle: "@SHREEPlayZ",
+    youtubeChannelId: "UC_PlaceholderSHREEPlayZ",
+    youtubeUrl: "https://youtube.com/@SHREEPlayZ",
+    isKickPartner: true,
+  },
   dollyislive: {
     slug: "dollyislive",
     name: "DollyIsLive",
@@ -25,7 +116,7 @@ export const rosterData: Record<string, Creator> = {
     youtubeHandle: "@dollyislive1756",
     youtubeChannelId: "UCDWW2LRI0O4lGsUBFVVRybw",
     youtubeUrl: "https://youtube.com/@dollyislive1756",
-    subscribers: "13.4K",
+    subscribers: "13.9K",
     totalViews: "1.1M+",
     videos: "884",
     joined: "Oct 13, 2022",
@@ -33,23 +124,71 @@ export const rosterData: Record<string, Creator> = {
     bio: "Hi people am a Streamer and an esports athlete from Hyderabad.",
     kickUrl: "https://kick.com/dollyislive",
     image: "/dolly.png",
-    hoverVideo: "https://cdn.coverr.co/videos/coverr-a-person-playing-a-video-game-2178/1080p.mp4"
+    hoverVideo: "https://cdn.coverr.co/videos/coverr-a-person-playing-a-video-game-2178/1080p.mp4",
+    isKickPartner: true,
   },
-  whyisselena: {
-    slug: "whyisselena",
-    name: "Selena",
-    role: "Lethal Precision FPS & Content Creator",
-    youtubeHandle: "@Whyisselena",
-    youtubeChannelId: "UCF8Jy62QvzoR_RycLdCyhXw",
-    youtubeUrl: "https://youtube.com/@Whyisselena",
-    subscribers: "2.23K",
-    totalViews: "198K+",
-    videos: "189",
-    joined: "Jan 7, 2021",
-    social: "instagram.com/selenaauwu",
-    kickUrl: "https://kick.com/whyisselena",
-    image: "/selena.png",
-    hoverVideo: "https://cdn.coverr.co/videos/coverr-playing-a-video-game-9626/1080p.mp4"
+  lailaplayzz: {
+    slug: "lailaplayzz",
+    name: "Laila playzz",
+    subscribers: "13.6K",
+    youtubeHandle: "@Lailaplayzz",
+    youtubeChannelId: "UC_PlaceholderLailaplayzz",
+    youtubeUrl: "https://youtube.com/@Lailaplayzz",
+    isKickPartner: true,
+  },
+  belikehanna: {
+    slug: "belikehanna",
+    name: "BeLikeHanna",
+    subscribers: "12.0K",
+    youtubeHandle: "@BeLikeHanna",
+    youtubeChannelId: "UC_PlaceholderBeLikeHanna",
+    youtubeUrl: "https://youtube.com/@BeLikeHanna",
+    isKickPartner: true,
+  },
+  m4god: {
+    slug: "m4god",
+    name: "M4GOD",
+    subscribers: "10.0K",
+    youtubeHandle: "@M4GOD",
+    youtubeChannelId: "UC_PlaceholderM4GOD",
+    youtubeUrl: "https://youtube.com/@M4GOD",
+    isKickPartner: true,
+  },
+  abhibergunfiltered: {
+    slug: "abhibergunfiltered",
+    name: "ABHiBERG Unfiltered",
+    subscribers: "7.4K",
+    youtubeHandle: "@ABHiBERGUnfiltered",
+    youtubeChannelId: "UC_PlaceholderABHiBERGUnfiltered",
+    youtubeUrl: "https://youtube.com/@ABHiBERGUnfiltered",
+    isKickPartner: true,
+  },
+  deepz9k: {
+    slug: "deepz9k",
+    name: "DeepZ9k",
+    subscribers: "4.8K",
+    youtubeHandle: "@DeepZ9k",
+    youtubeChannelId: "UC_PlaceholderDeepZ9k",
+    youtubeUrl: "https://youtube.com/@DeepZ9k",
+    isKickPartner: false,
+  },
+  damaskplays: {
+    slug: "damaskplays",
+    name: "DAMASK plays",
+    subscribers: "4.2K",
+    youtubeHandle: "@DAMASKplays",
+    youtubeChannelId: "UC_PlaceholderDAMASKplays",
+    youtubeUrl: "https://youtube.com/@DAMASKplays",
+    isKickPartner: true,
+  },
+  mxrsh: {
+    slug: "mxrsh",
+    name: "Mxrsh",
+    subscribers: "2.5K",
+    youtubeHandle: "@Mxrsh",
+    youtubeChannelId: "UC_PlaceholderMxrsh",
+    youtubeUrl: "https://youtube.com/@Mxrsh",
+    isKickPartner: true,
   },
   brianplayzz: {
     slug: "brianplayzz",
@@ -58,12 +197,30 @@ export const rosterData: Record<string, Creator> = {
     youtubeHandle: "@brianplayzz",
     youtubeChannelId: "UC_PlaceholderBrian",
     youtubeUrl: "https://youtube.com/@brianplayzz",
-    subscribers: "TBA",
+    subscribers: "2.4K",
     totalViews: "TBA",
     videos: "TBA",
     joined: "TBA",
     bio: "Delivering high-octane cinematic gameplay and unparalleled FPS mastery.",
-    hoverVideo: "https://cdn.coverr.co/videos/coverr-abstract-neon-waves-2253/1080p.mp4"
+    hoverVideo: "https://cdn.coverr.co/videos/coverr-abstract-neon-waves-2253/1080p.mp4",
+    isKickPartner: false,
+  },
+  whyisselena: {
+    slug: "whyisselena",
+    name: "WhyisSelena",
+    role: "Lethal Precision FPS & Content Creator",
+    youtubeHandle: "@Whyisselena",
+    youtubeChannelId: "UCF8Jy62QvzoR_RycLdCyhXw",
+    youtubeUrl: "https://youtube.com/@Whyisselena",
+    subscribers: "2.3K",
+    totalViews: "198K+",
+    videos: "189",
+    joined: "Jan 7, 2021",
+    social: "instagram.com/selenaauwu",
+    kickUrl: "https://kick.com/whyisselena",
+    image: "/selena.png",
+    hoverVideo: "https://cdn.coverr.co/videos/coverr-playing-a-video-game-9626/1080p.mp4",
+    isKickPartner: true,
   },
   snfx: {
     slug: "snfx",
@@ -72,12 +229,13 @@ export const rosterData: Record<string, Creator> = {
     youtubeHandle: "@snfx",
     youtubeChannelId: "UC_PlaceholderSnFx",
     youtubeUrl: "https://youtube.com/@snfx",
-    subscribers: "TBA",
+    subscribers: "1.3K",
     totalViews: "TBA",
     videos: "TBA",
     joined: "TBA",
     bio: "Pioneering visual storytelling and elite mechanical skill across the gaming spectrum.",
-    hoverVideo: "https://cdn.coverr.co/videos/coverr-abstract-glowing-lines-4158/1080p.mp4"
+    hoverVideo: "https://cdn.coverr.co/videos/coverr-abstract-glowing-lines-4158/1080p.mp4",
+    isKickPartner: false,
   }
 };
 
