@@ -14,13 +14,13 @@ export default function RosterSidebar({ isOpen, onClose }: RosterSidebarProps) {
       id="roster-sidebar"
     >
       <div className="px-8 py-8 border-b border-white/10 flex justify-between items-center bg-white/[0.02]">
-        <h3 className="text-[10px] text-white uppercase tracking-widest flex items-center gap-3">
+        <h3 className="text-[10px] text-white uppercase tracking-widest flex items-center gap-3 font-bold">
           <span className="w-1.5 h-1.5 rounded-full bg-[#c8102e] animate-pulse"></span> 
           HYDRASAURUS NETWORK
         </h3>
         <button 
           onClick={onClose}
-          className="text-secondary hover:text-[#c8102e] transition-colors flex items-center justify-center p-2 cursor-pointer" 
+          className="text-secondary hover:text-[#c8102e] transition-colors flex items-center justify-center p-2 cursor-pointer bg-transparent" 
           id="close-sidebar"
           aria-label="Close Roster Sidebar"
         >
@@ -37,21 +37,38 @@ export default function RosterSidebar({ isOpen, onClose }: RosterSidebarProps) {
               <div className="text-white text-[11px] group-hover:text-[#c8102e] transition-colors uppercase tracking-widest flex items-center gap-2">
                 <span className="text-secondary opacity-50">&gt;</span> Sarvesh Shinde
               </div>
-              <div className="text-[9px] text-secondary uppercase pl-4">Director of Operations</div>
+              <div className="text-[9px] text-secondary uppercase pl-4">Founder & CEO</div>
             </div>
             <div className="group flex flex-col gap-1 cursor-pointer">
               <div className="text-white text-[11px] group-hover:text-[#c8102e] transition-colors uppercase tracking-widest flex items-center gap-2">
-                <span className="text-secondary opacity-50">&gt;</span> Rohit
+                <span className="text-secondary opacity-50">&gt;</span> Rohit Badhe
               </div>
-              <div className="text-[9px] text-secondary uppercase pl-4">Logistics Commander</div>
+              <div className="text-[9px] text-secondary uppercase pl-4">Co-Founder</div>
+            </div>
+            <div className="group flex flex-col gap-1 cursor-pointer">
+              <div className="text-white text-[11px] group-hover:text-[#c8102e] transition-colors uppercase tracking-widest flex items-center gap-2">
+                <span className="text-secondary opacity-50">&gt;</span> Sushant Nanaware
+              </div>
+              <div className="text-[9px] text-secondary uppercase pl-4">Head Manager</div>
             </div>
           </div>
         </div>
 
-        {/* Active Roster */}
+        {/* Active Roster (15K+ Subscribers) */}
         <div>
           <h4 className="text-[10px] text-[#c8102e] uppercase tracking-widest mb-6 border-b border-white/10 pb-2 font-bold">// ACTIVE ROSTER</h4>
           <div className="flex flex-col gap-4">
+            {/* PN Syed */}
+            <div className="group flex items-baseline justify-between cursor-pointer border-b border-white/5 pb-2 hover:border-[#c8102e]/50 transition-colors">
+              <div className="text-white text-[10px] group-hover:text-[#c8102e] transition-colors uppercase flex items-center gap-2">
+                <span className="text-secondary opacity-50 text-xs">-</span> PN Syed
+              </div>
+              <div className="text-[9px] text-secondary flex items-center gap-2">
+                115.0K CCV
+                <span className="w-1.5 h-1.5 bg-[#c8102e] rounded-sm"></span>
+              </div>
+            </div>
+            {/* iMRocky */}
             <div className="group flex items-baseline justify-between cursor-pointer border-b border-white/5 pb-2 hover:border-[#c8102e]/50 transition-colors">
               <div className="text-white text-[10px] group-hover:text-[#c8102e] transition-colors uppercase flex items-center gap-2">
                 <span className="text-secondary opacity-50 text-xs">-</span> iMRocky
@@ -61,15 +78,47 @@ export default function RosterSidebar({ isOpen, onClose }: RosterSidebarProps) {
                 <span className="w-1.5 h-1.5 bg-[#c8102e] rounded-sm"></span>
               </div>
             </div>
-            <div className="group flex items-baseline justify-between cursor-pointer border-b border-white/5 pb-2 hover:border-white/50 transition-colors">
-              <div className="text-white text-[10px] group-hover:text-white transition-colors uppercase flex items-center gap-2">
+            {/* Arnav Gaming */}
+            <div className="group flex items-baseline justify-between cursor-pointer border-b border-white/5 pb-2 hover:border-[#c8102e]/50 transition-colors">
+              <div className="text-white text-[10px] group-hover:text-[#c8102e] transition-colors uppercase flex items-center gap-2">
+                <span className="text-secondary opacity-50 text-xs">-</span> Arnav Gaming
+              </div>
+              <div className="text-[9px] text-secondary flex items-center gap-2">
+                38.0K CCV
+                <span className="w-1.5 h-1.5 bg-[#c8102e] rounded-sm"></span>
+              </div>
+            </div>
+            {/* RadBriefing */}
+            <div className="group flex items-baseline justify-between cursor-pointer border-b border-white/5 pb-2 hover:border-[#c8102e]/50 transition-colors">
+              <div className="text-white text-[10px] group-hover:text-[#c8102e] transition-colors uppercase flex items-center gap-2">
+                <span className="text-secondary opacity-50 text-xs">-</span> RadBriefing
+              </div>
+              <div className="text-[9px] text-secondary flex items-center gap-2">
+                36.5K CCV
+                <span className="w-1.5 h-1.5 bg-[#c8102e] rounded-sm"></span>
+              </div>
+            </div>
+            {/* The Deadshot */}
+            <div className="group flex items-baseline justify-between cursor-pointer border-b border-white/5 pb-2 hover:border-[#c8102e]/50 transition-colors">
+              <div className="text-white text-[10px] group-hover:text-[#c8102e] transition-colors uppercase flex items-center gap-2">
                 <span className="text-secondary opacity-50 text-xs">-</span> The Deadshot
               </div>
               <div className="text-[9px] text-secondary flex items-center gap-2">
                 24.8K CCV
-                <span className="w-1.5 h-1.5 bg-white/20 rounded-sm"></span>
+                <span className="w-1.5 h-1.5 bg-[#c8102e] rounded-sm"></span>
               </div>
             </div>
+            {/* Asuka Bae */}
+            <div className="group flex items-baseline justify-between cursor-pointer border-b border-white/5 pb-2 hover:border-[#c8102e]/50 transition-colors">
+              <div className="text-white text-[10px] group-hover:text-[#c8102e] transition-colors uppercase flex items-center gap-2">
+                <span className="text-secondary opacity-50 text-xs">-</span> Asuka Bae
+              </div>
+              <div className="text-[9px] text-secondary flex items-center gap-2">
+                21.0K CCV
+                <span className="w-1.5 h-1.5 bg-[#c8102e] rounded-sm"></span>
+              </div>
+            </div>
+            {/* BacKFire */}
             <div className="group flex items-baseline justify-between cursor-pointer border-b border-white/5 pb-2 hover:border-[#c8102e]/50 transition-colors">
               <div className="text-white text-[10px] group-hover:text-[#c8102e] transition-colors uppercase flex items-center gap-2">
                 <span className="text-secondary opacity-50 text-xs">-</span> BacKFire
@@ -79,45 +128,152 @@ export default function RosterSidebar({ isOpen, onClose }: RosterSidebarProps) {
                 <span className="w-1.5 h-1.5 bg-[#c8102e] rounded-sm"></span>
               </div>
             </div>
-            <div className="group flex items-baseline justify-between cursor-pointer border-b border-white/5 pb-2 hover:border-white/50 transition-colors">
-              <div className="text-white text-[10px] group-hover:text-white transition-colors uppercase flex items-center gap-2">
+            {/* Eliminator */}
+            <div className="group flex items-baseline justify-between cursor-pointer border-b border-white/5 pb-2 hover:border-[#c8102e]/50 transition-colors">
+              <div className="text-white text-[10px] group-hover:text-[#c8102e] transition-colors uppercase flex items-center gap-2">
+                <span className="text-secondary opacity-50 text-xs">-</span> Eliminator
+              </div>
+              <div className="text-[9px] text-secondary flex items-center gap-2">
+                18.5K CCV
+                <span className="w-1.5 h-1.5 bg-[#c8102e] rounded-sm"></span>
+              </div>
+            </div>
+            {/* Typhon */}
+            <div className="group flex items-baseline justify-between cursor-pointer border-b border-white/5 pb-2 hover:border-[#c8102e]/50 transition-colors">
+              <div className="text-white text-[10px] group-hover:text-[#c8102e] transition-colors uppercase flex items-center gap-2">
                 <span className="text-secondary opacity-50 text-xs">-</span> Typhon
               </div>
               <div className="text-[9px] text-secondary flex items-center gap-2">
                 15.5K CCV
-                <span className="w-1.5 h-1.5 bg-white/20 rounded-sm"></span>
+                <span className="w-1.5 h-1.5 bg-[#c8102e] rounded-sm"></span>
+              </div>
+            </div>
+            {/* SHREE PlayZ */}
+            <div className="group flex items-baseline justify-between cursor-pointer border-b border-white/5 pb-2 hover:border-[#c8102e]/50 transition-colors">
+              <div className="text-white text-[10px] group-hover:text-[#c8102e] transition-colors uppercase flex items-center gap-2">
+                <span className="text-secondary opacity-50 text-xs">-</span> SHREE PlayZ
+              </div>
+              <div className="text-[9px] text-secondary flex items-center gap-2">
+                15.0K CCV
+                <span className="w-1.5 h-1.5 bg-[#c8102e] rounded-sm"></span>
               </div>
             </div>
           </div>
         </div>
 
-        {/* Deployment Pipeline */}
+        {/* Deployment Pipeline (Under 15K Subscribers) */}
         <div>
           <h4 className="text-[10px] text-[#c8102e] uppercase tracking-widest mb-6 border-b border-white/10 pb-2 font-bold">// DEPLOYMENT PIPELINE</h4>
           <div className="flex flex-col gap-4">
+            {/* DollyIsLive */}
             <div className="group flex items-baseline justify-between cursor-pointer border-b border-white/5 pb-2 hover:border-white/20 transition-colors">
               <div className="text-secondary text-[10px] group-hover:text-white transition-colors uppercase flex items-center gap-2">
                 <span className="text-tertiary opacity-30 text-xs">~</span> DollyIsLive
               </div>
-              <div className="text-[9px] text-tertiary">13.9K CCV</div>
+              <div className="text-[9px] text-tertiary flex items-center gap-2">
+                13.9K CCV
+                <span className="w-1.5 h-1.5 bg-[#c8102e] rounded-sm"></span>
+              </div>
             </div>
+            {/* Laila playzz */}
             <div className="group flex items-baseline justify-between cursor-pointer border-b border-white/5 pb-2 hover:border-white/20 transition-colors">
               <div className="text-secondary text-[10px] group-hover:text-white transition-colors uppercase flex items-center gap-2">
                 <span className="text-tertiary opacity-30 text-xs">~</span> Laila playzz
               </div>
-              <div className="text-[9px] text-tertiary">13.6K CCV</div>
+              <div className="text-[9px] text-tertiary flex items-center gap-2">
+                13.6K CCV
+                <span className="w-1.5 h-1.5 bg-[#c8102e] rounded-sm"></span>
+              </div>
             </div>
+            {/* BeLikeHanna */}
             <div className="group flex items-baseline justify-between cursor-pointer border-b border-white/5 pb-2 hover:border-white/20 transition-colors">
               <div className="text-secondary text-[10px] group-hover:text-white transition-colors uppercase flex items-center gap-2">
                 <span className="text-tertiary opacity-30 text-xs">~</span> BeLikeHanna
               </div>
-              <div className="text-[9px] text-tertiary">12.0K CCV</div>
+              <div className="text-[9px] text-tertiary flex items-center gap-2">
+                12.0K CCV
+                <span className="w-1.5 h-1.5 bg-[#c8102e] rounded-sm"></span>
+              </div>
             </div>
+            {/* M4GOD */}
             <div className="group flex items-baseline justify-between cursor-pointer border-b border-white/5 pb-2 hover:border-white/20 transition-colors">
               <div className="text-secondary text-[10px] group-hover:text-white transition-colors uppercase flex items-center gap-2">
                 <span className="text-tertiary opacity-30 text-xs">~</span> M4GOD
               </div>
-              <div className="text-[9px] text-tertiary">10.0K CCV</div>
+              <div className="text-[9px] text-tertiary flex items-center gap-2">
+                10.0K CCV
+                <span className="w-1.5 h-1.5 bg-[#c8102e] rounded-sm"></span>
+              </div>
+            </div>
+            {/* ABHiBERG Unfiltered */}
+            <div className="group flex items-baseline justify-between cursor-pointer border-b border-white/5 pb-2 hover:border-white/20 transition-colors">
+              <div className="text-secondary text-[10px] group-hover:text-white transition-colors uppercase flex items-center gap-2">
+                <span className="text-tertiary opacity-30 text-xs">~</span> ABHiBERG Unfiltered
+              </div>
+              <div className="text-[9px] text-tertiary flex items-center gap-2">
+                7.4K CCV
+                <span className="w-1.5 h-1.5 bg-[#c8102e] rounded-sm"></span>
+              </div>
+            </div>
+            {/* DeepZ9k */}
+            <div className="group flex items-baseline justify-between cursor-pointer border-b border-white/5 pb-2 hover:border-white/20 transition-colors">
+              <div className="text-secondary text-[10px] group-hover:text-white transition-colors uppercase flex items-center gap-2">
+                <span className="text-tertiary opacity-30 text-xs">~</span> DeepZ9k
+              </div>
+              <div className="text-[9px] text-tertiary flex items-center gap-2">
+                4.8K CCV
+                <span className="w-1.5 h-1.5 bg-white/20 rounded-sm"></span>
+              </div>
+            </div>
+            {/* DAMASK plays */}
+            <div className="group flex items-baseline justify-between cursor-pointer border-b border-white/5 pb-2 hover:border-white/20 transition-colors">
+              <div className="text-secondary text-[10px] group-hover:text-white transition-colors uppercase flex items-center gap-2">
+                <span className="text-tertiary opacity-30 text-xs">~</span> DAMASK plays
+              </div>
+              <div className="text-[9px] text-tertiary flex items-center gap-2">
+                4.2K CCV
+                <span className="w-1.5 h-1.5 bg-[#c8102e] rounded-sm"></span>
+              </div>
+            </div>
+            {/* Mxrsh */}
+            <div className="group flex items-baseline justify-between cursor-pointer border-b border-white/5 pb-2 hover:border-white/20 transition-colors">
+              <div className="text-secondary text-[10px] group-hover:text-white transition-colors uppercase flex items-center gap-2">
+                <span className="text-tertiary opacity-30 text-xs">~</span> Mxrsh
+              </div>
+              <div className="text-[9px] text-tertiary flex items-center gap-2">
+                2.5K CCV
+                <span className="w-1.5 h-1.5 bg-[#c8102e] rounded-sm"></span>
+              </div>
+            </div>
+            {/* Brian Playzz */}
+            <div className="group flex items-baseline justify-between cursor-pointer border-b border-white/5 pb-2 hover:border-white/20 transition-colors">
+              <div className="text-secondary text-[10px] group-hover:text-white transition-colors uppercase flex items-center gap-2">
+                <span className="text-tertiary opacity-30 text-xs">~</span> Brian Playzz
+              </div>
+              <div className="text-[9px] text-tertiary flex items-center gap-2">
+                2.4K CCV
+                <span className="w-1.5 h-1.5 bg-white/20 rounded-sm"></span>
+              </div>
+            </div>
+            {/* WhyisSelena */}
+            <div className="group flex items-baseline justify-between cursor-pointer border-b border-white/5 pb-2 hover:border-white/20 transition-colors">
+              <div className="text-secondary text-[10px] group-hover:text-white transition-colors uppercase flex items-center gap-2">
+                <span className="text-tertiary opacity-30 text-xs">~</span> WhyisSelena
+              </div>
+              <div className="text-[9px] text-tertiary flex items-center gap-2">
+                2.3K CCV
+                <span className="w-1.5 h-1.5 bg-[#c8102e] rounded-sm"></span>
+              </div>
+            </div>
+            {/* SnFx */}
+            <div className="group flex items-baseline justify-between cursor-pointer border-b border-white/5 pb-2 hover:border-white/20 transition-colors">
+              <div className="text-secondary text-[10px] group-hover:text-white transition-colors uppercase flex items-center gap-2">
+                <span className="text-tertiary opacity-30 text-xs">~</span> SnFx
+              </div>
+              <div className="text-[9px] text-tertiary flex items-center gap-2">
+                1.3K CCV
+                <span className="w-1.5 h-1.5 bg-white/20 rounded-sm"></span>
+              </div>
             </div>
           </div>
         </div>
@@ -132,4 +288,3 @@ export default function RosterSidebar({ isOpen, onClose }: RosterSidebarProps) {
     </aside>
   );
 }
-
