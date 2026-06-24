@@ -54,9 +54,9 @@ export default function RosterSidebar({ isOpen, onClose }: RosterSidebarProps) {
           </div>
         </div>
 
-        {/* Active Roster (15K+ Subscribers) */}
+        {/* Hydrasaurus Roster / Active Roster */}
         <div>
-          <h4 className="text-[10px] text-[#c8102e] uppercase tracking-widest mb-6 border-b border-white/10 pb-2 font-bold">// ACTIVE ROSTER</h4>
+          <h4 className="text-[10px] text-[#c8102e] uppercase tracking-widest mb-6 border-b border-white/10 pb-2 font-bold">// HYDRASAURUS ROSTER</h4>
           <div className="flex flex-col gap-4">
             {/* PN Syed */}
             <div className="group flex items-baseline justify-between cursor-pointer border-b border-white/5 pb-2 hover:border-[#c8102e]/50 transition-colors">
@@ -64,8 +64,8 @@ export default function RosterSidebar({ isOpen, onClose }: RosterSidebarProps) {
                 <span className="text-secondary opacity-50 text-xs">-</span> PN Syed
               </div>
               <div className="text-[9px] text-secondary flex items-center gap-2">
-                115.0K CCV
-                <span className="w-1.5 h-1.5 bg-[#c8102e] rounded-sm"></span>
+                115.0K Subs
+                <span className="w-1.5 h-1.5 bg-[#53FC18] rounded-sm" title="Kick Partnered"></span>
               </div>
             </div>
             {/* iMRocky */}
@@ -74,8 +74,8 @@ export default function RosterSidebar({ isOpen, onClose }: RosterSidebarProps) {
                 <span className="text-secondary opacity-50 text-xs">-</span> iMRocky
               </div>
               <div className="text-[9px] text-secondary flex items-center gap-2">
-                52.0K CCV
-                <span className="w-1.5 h-1.5 bg-[#c8102e] rounded-sm"></span>
+                52.0K Subs
+                <span className="w-1.5 h-1.5 bg-[#53FC18] rounded-sm" title="Kick Partnered"></span>
               </div>
             </div>
             {/* Arnav Gaming */}
@@ -84,8 +84,8 @@ export default function RosterSidebar({ isOpen, onClose }: RosterSidebarProps) {
                 <span className="text-secondary opacity-50 text-xs">-</span> Arnav Gaming
               </div>
               <div className="text-[9px] text-secondary flex items-center gap-2">
-                38.0K CCV
-                <span className="w-1.5 h-1.5 bg-[#c8102e] rounded-sm"></span>
+                38.0K Subs
+                <span className="w-1.5 h-1.5 bg-[#53FC18] rounded-sm" title="Kick Partnered"></span>
               </div>
             </div>
             {/* RadBriefing */}
@@ -94,8 +94,8 @@ export default function RosterSidebar({ isOpen, onClose }: RosterSidebarProps) {
                 <span className="text-secondary opacity-50 text-xs">-</span> RadBriefing
               </div>
               <div className="text-[9px] text-secondary flex items-center gap-2">
-                36.5K CCV
-                <span className="w-1.5 h-1.5 bg-[#c8102e] rounded-sm"></span>
+                36.5K Subs
+                <span className="w-1.5 h-1.5 bg-[#53FC18] rounded-sm" title="Kick Partnered"></span>
               </div>
             </div>
             {/* The Deadshot */}
@@ -104,8 +104,8 @@ export default function RosterSidebar({ isOpen, onClose }: RosterSidebarProps) {
                 <span className="text-secondary opacity-50 text-xs">-</span> The Deadshot
               </div>
               <div className="text-[9px] text-secondary flex items-center gap-2">
-                24.8K CCV
-                <span className="w-1.5 h-1.5 bg-[#c8102e] rounded-sm"></span>
+                24.8K Subs
+                <span className="w-1.5 h-1.5 bg-[#53FC18] rounded-sm" title="Kick Partnered"></span>
               </div>
             </div>
             {/* Asuka Bae */}
@@ -114,8 +114,8 @@ export default function RosterSidebar({ isOpen, onClose }: RosterSidebarProps) {
                 <span className="text-secondary opacity-50 text-xs">-</span> Asuka Bae
               </div>
               <div className="text-[9px] text-secondary flex items-center gap-2">
-                21.0K CCV
-                <span className="w-1.5 h-1.5 bg-[#c8102e] rounded-sm"></span>
+                21.0K Subs
+                <span className="w-1.5 h-1.5 bg-[#53FC18] rounded-sm" title="Kick Partnered"></span>
               </div>
             </div>
             {/* BacKFire */}
@@ -124,8 +124,8 @@ export default function RosterSidebar({ isOpen, onClose }: RosterSidebarProps) {
                 <span className="text-secondary opacity-50 text-xs">-</span> BacKFire
               </div>
               <div className="text-[9px] text-secondary flex items-center gap-2">
-                19.4K CCV
-                <span className="w-1.5 h-1.5 bg-[#c8102e] rounded-sm"></span>
+                19.4K Subs
+                <span className="w-1.5 h-1.5 bg-[#53FC18] rounded-sm" title="Kick Partnered"></span>
               </div>
             </div>
             {/* Eliminator */}
@@ -134,8 +134,8 @@ export default function RosterSidebar({ isOpen, onClose }: RosterSidebarProps) {
                 <span className="text-secondary opacity-50 text-xs">-</span> Eliminator
               </div>
               <div className="text-[9px] text-secondary flex items-center gap-2">
-                18.5K CCV
-                <span className="w-1.5 h-1.5 bg-[#c8102e] rounded-sm"></span>
+                18.5K Subs
+                <span className="w-1.5 h-1.5 bg-[#53FC18] rounded-sm" title="Kick Partnered"></span>
               </div>
             </div>
             {/* Typhon */}
@@ -144,8 +144,8 @@ export default function RosterSidebar({ isOpen, onClose }: RosterSidebarProps) {
                 <span className="text-secondary opacity-50 text-xs">-</span> Typhon
               </div>
               <div className="text-[9px] text-secondary flex items-center gap-2">
-                15.5K CCV
-                <span className="w-1.5 h-1.5 bg-[#c8102e] rounded-sm"></span>
+                15.5K Subs
+                <span className="w-1.5 h-1.5 bg-[#53FC18] rounded-sm" title="Kick Partnered"></span>
               </div>
             </div>
             {/* SHREE PlayZ */}
@@ -154,125 +154,118 @@ export default function RosterSidebar({ isOpen, onClose }: RosterSidebarProps) {
                 <span className="text-secondary opacity-50 text-xs">-</span> SHREE PlayZ
               </div>
               <div className="text-[9px] text-secondary flex items-center gap-2">
-                15.0K CCV
-                <span className="w-1.5 h-1.5 bg-[#c8102e] rounded-sm"></span>
+                15.0K Subs
+                <span className="w-1.5 h-1.5 bg-[#53FC18] rounded-sm" title="Kick Partnered"></span>
               </div>
             </div>
-          </div>
-        </div>
-
-        {/* Deployment Pipeline (Under 15K Subscribers) */}
-        <div>
-          <h4 className="text-[10px] text-[#c8102e] uppercase tracking-widest mb-6 border-b border-white/10 pb-2 font-bold">// DEPLOYMENT PIPELINE</h4>
-          <div className="flex flex-col gap-4">
             {/* DollyIsLive */}
-            <div className="group flex items-baseline justify-between cursor-pointer border-b border-white/5 pb-2 hover:border-white/20 transition-colors">
-              <div className="text-secondary text-[10px] group-hover:text-white transition-colors uppercase flex items-center gap-2">
-                <span className="text-tertiary opacity-30 text-xs">~</span> DollyIsLive
+            <div className="group flex items-baseline justify-between cursor-pointer border-b border-white/5 pb-2 hover:border-[#c8102e]/50 transition-colors">
+              <div className="text-white text-[10px] group-hover:text-[#c8102e] transition-colors uppercase flex items-center gap-2">
+                <span className="text-secondary opacity-50 text-xs">-</span> DollyIsLive
               </div>
-              <div className="text-[9px] text-tertiary flex items-center gap-2">
-                13.9K CCV
-                <span className="w-1.5 h-1.5 bg-[#c8102e] rounded-sm"></span>
+              <div className="text-[9px] text-secondary flex items-center gap-2">
+                13.9K Subs
+                <span className="w-1.5 h-1.5 bg-[#53FC18] rounded-sm" title="Kick Partnered"></span>
               </div>
             </div>
             {/* Laila playzz */}
-            <div className="group flex items-baseline justify-between cursor-pointer border-b border-white/5 pb-2 hover:border-white/20 transition-colors">
-              <div className="text-secondary text-[10px] group-hover:text-white transition-colors uppercase flex items-center gap-2">
-                <span className="text-tertiary opacity-30 text-xs">~</span> Laila playzz
+            <div className="group flex items-baseline justify-between cursor-pointer border-b border-white/5 pb-2 hover:border-[#c8102e]/50 transition-colors">
+              <div className="text-white text-[10px] group-hover:text-[#c8102e] transition-colors uppercase flex items-center gap-2">
+                <span className="text-secondary opacity-50 text-xs">-</span> Laila playzz
               </div>
-              <div className="text-[9px] text-tertiary flex items-center gap-2">
-                13.6K CCV
-                <span className="w-1.5 h-1.5 bg-[#c8102e] rounded-sm"></span>
+              <div className="text-[9px] text-secondary flex items-center gap-2">
+                13.6K Subs
+                <span className="w-1.5 h-1.5 bg-[#53FC18] rounded-sm" title="Kick Partnered"></span>
               </div>
             </div>
             {/* BeLikeHanna */}
-            <div className="group flex items-baseline justify-between cursor-pointer border-b border-white/5 pb-2 hover:border-white/20 transition-colors">
-              <div className="text-secondary text-[10px] group-hover:text-white transition-colors uppercase flex items-center gap-2">
-                <span className="text-tertiary opacity-30 text-xs">~</span> BeLikeHanna
+            <div className="group flex items-baseline justify-between cursor-pointer border-b border-white/5 pb-2 hover:border-[#c8102e]/50 transition-colors">
+              <div className="text-white text-[10px] group-hover:text-[#c8102e] transition-colors uppercase flex items-center gap-2">
+                <span className="text-secondary opacity-50 text-xs">-</span> BeLikeHanna
               </div>
-              <div className="text-[9px] text-tertiary flex items-center gap-2">
-                12.0K CCV
-                <span className="w-1.5 h-1.5 bg-[#c8102e] rounded-sm"></span>
+              <div className="text-[9px] text-secondary flex items-center gap-2">
+                12.0K Subs
+                <span className="w-1.5 h-1.5 bg-[#53FC18] rounded-sm" title="Kick Partnered"></span>
               </div>
             </div>
             {/* M4GOD */}
-            <div className="group flex items-baseline justify-between cursor-pointer border-b border-white/5 pb-2 hover:border-white/20 transition-colors">
-              <div className="text-secondary text-[10px] group-hover:text-white transition-colors uppercase flex items-center gap-2">
-                <span className="text-tertiary opacity-30 text-xs">~</span> M4GOD
+            <div className="group flex items-baseline justify-between cursor-pointer border-b border-white/5 pb-2 hover:border-[#c8102e]/50 transition-colors">
+              <div className="text-white text-[10px] group-hover:text-[#c8102e] transition-colors uppercase flex items-center gap-2">
+                <span className="text-secondary opacity-50 text-xs">-</span> M4GOD
               </div>
-              <div className="text-[9px] text-tertiary flex items-center gap-2">
-                10.0K CCV
-                <span className="w-1.5 h-1.5 bg-[#c8102e] rounded-sm"></span>
+              <div className="text-[9px] text-secondary flex items-center gap-2">
+                10.0K Subs
+                <span className="w-1.5 h-1.5 bg-[#53FC18] rounded-sm" title="Kick Partnered"></span>
               </div>
             </div>
             {/* ABHiBERG Unfiltered */}
-            <div className="group flex items-baseline justify-between cursor-pointer border-b border-white/5 pb-2 hover:border-white/20 transition-colors">
-              <div className="text-secondary text-[10px] group-hover:text-white transition-colors uppercase flex items-center gap-2">
-                <span className="text-tertiary opacity-30 text-xs">~</span> ABHiBERG Unfiltered
+            <div className="group flex items-baseline justify-between cursor-pointer border-b border-white/5 pb-2 hover:border-[#c8102e]/50 transition-colors">
+              <div className="text-white text-[10px] group-hover:text-[#c8102e] transition-colors uppercase flex items-center gap-2">
+                <span className="text-secondary opacity-50 text-xs">-</span> ABHiBERG Unfiltered
               </div>
-              <div className="text-[9px] text-tertiary flex items-center gap-2">
-                7.4K CCV
-                <span className="w-1.5 h-1.5 bg-[#c8102e] rounded-sm"></span>
+              <div className="text-[9px] text-secondary flex items-center gap-2">
+                7.4K Subs
+                <span className="w-1.5 h-1.5 bg-[#53FC18] rounded-sm" title="Kick Partnered"></span>
               </div>
             </div>
             {/* DeepZ9k */}
-            <div className="group flex items-baseline justify-between cursor-pointer border-b border-white/5 pb-2 hover:border-white/20 transition-colors">
-              <div className="text-secondary text-[10px] group-hover:text-white transition-colors uppercase flex items-center gap-2">
-                <span className="text-tertiary opacity-30 text-xs">~</span> DeepZ9k
+            <div className="group flex items-baseline justify-between cursor-pointer border-b border-white/5 pb-2 hover:border-[#c8102e]/50 transition-colors">
+              <div className="text-white text-[10px] group-hover:text-[#c8102e] transition-colors uppercase flex items-center gap-2">
+                <span className="text-secondary opacity-50 text-xs">-</span> DeepZ9k
               </div>
-              <div className="text-[9px] text-tertiary flex items-center gap-2">
-                4.8K CCV
-                <span className="w-1.5 h-1.5 bg-white/20 rounded-sm"></span>
+              <div className="text-[9px] text-secondary flex items-center gap-2">
+                4.8K Subs
+                <span className="w-1.5 h-1.5 bg-[#c8102e] rounded-sm" title="YouTube Only"></span>
               </div>
             </div>
             {/* DAMASK plays */}
-            <div className="group flex items-baseline justify-between cursor-pointer border-b border-white/5 pb-2 hover:border-white/20 transition-colors">
-              <div className="text-secondary text-[10px] group-hover:text-white transition-colors uppercase flex items-center gap-2">
-                <span className="text-tertiary opacity-30 text-xs">~</span> DAMASK plays
+            <div className="group flex items-baseline justify-between cursor-pointer border-b border-white/5 pb-2 hover:border-[#c8102e]/50 transition-colors">
+              <div className="text-white text-[10px] group-hover:text-[#c8102e] transition-colors uppercase flex items-center gap-2">
+                <span className="text-secondary opacity-50 text-xs">-</span> DAMASK plays
               </div>
-              <div className="text-[9px] text-tertiary flex items-center gap-2">
-                4.2K CCV
-                <span className="w-1.5 h-1.5 bg-[#c8102e] rounded-sm"></span>
+              <div className="text-[9px] text-secondary flex items-center gap-2">
+                4.2K Subs
+                <span className="w-1.5 h-1.5 bg-[#53FC18] rounded-sm" title="Kick Partnered"></span>
               </div>
             </div>
             {/* Mxrsh */}
-            <div className="group flex items-baseline justify-between cursor-pointer border-b border-white/5 pb-2 hover:border-white/20 transition-colors">
-              <div className="text-secondary text-[10px] group-hover:text-white transition-colors uppercase flex items-center gap-2">
-                <span className="text-tertiary opacity-30 text-xs">~</span> Mxrsh
+            <div className="group flex items-baseline justify-between cursor-pointer border-b border-white/5 pb-2 hover:border-[#c8102e]/50 transition-colors">
+              <div className="text-white text-[10px] group-hover:text-[#c8102e] transition-colors uppercase flex items-center gap-2">
+                <span className="text-secondary opacity-50 text-xs">-</span> Mxrsh
               </div>
-              <div className="text-[9px] text-tertiary flex items-center gap-2">
-                2.5K CCV
-                <span className="w-1.5 h-1.5 bg-[#c8102e] rounded-sm"></span>
+              <div className="text-[9px] text-secondary flex items-center gap-2">
+                2.5K Subs
+                <span className="w-1.5 h-1.5 bg-[#53FC18] rounded-sm" title="Kick Partnered"></span>
               </div>
             </div>
             {/* Brian Playzz */}
-            <div className="group flex items-baseline justify-between cursor-pointer border-b border-white/5 pb-2 hover:border-white/20 transition-colors">
-              <div className="text-secondary text-[10px] group-hover:text-white transition-colors uppercase flex items-center gap-2">
-                <span className="text-tertiary opacity-30 text-xs">~</span> Brian Playzz
+            <div className="group flex items-baseline justify-between cursor-pointer border-b border-white/5 pb-2 hover:border-[#c8102e]/50 transition-colors">
+              <div className="text-white text-[10px] group-hover:text-[#c8102e] transition-colors uppercase flex items-center gap-2">
+                <span className="text-secondary opacity-50 text-xs">-</span> Brian Playzz
               </div>
-              <div className="text-[9px] text-tertiary flex items-center gap-2">
-                2.4K CCV
-                <span className="w-1.5 h-1.5 bg-white/20 rounded-sm"></span>
+              <div className="text-[9px] text-secondary flex items-center gap-2">
+                2.4K Subs
+                <span className="w-1.5 h-1.5 bg-[#c8102e] rounded-sm" title="YouTube Only"></span>
               </div>
             </div>
             {/* WhyisSelena */}
-            <div className="group flex items-baseline justify-between cursor-pointer border-b border-white/5 pb-2 hover:border-white/20 transition-colors">
-              <div className="text-secondary text-[10px] group-hover:text-white transition-colors uppercase flex items-center gap-2">
-                <span className="text-tertiary opacity-30 text-xs">~</span> WhyisSelena
+            <div className="group flex items-baseline justify-between cursor-pointer border-b border-white/5 pb-2 hover:border-[#c8102e]/50 transition-colors">
+              <div className="text-white text-[10px] group-hover:text-[#c8102e] transition-colors uppercase flex items-center gap-2">
+                <span className="text-secondary opacity-50 text-xs">-</span> WhyisSelena
               </div>
-              <div className="text-[9px] text-tertiary flex items-center gap-2">
-                2.3K CCV
-                <span className="w-1.5 h-1.5 bg-[#c8102e] rounded-sm"></span>
+              <div className="text-[9px] text-secondary flex items-center gap-2">
+                2.3K Subs
+                <span className="w-1.5 h-1.5 bg-[#53FC18] rounded-sm" title="Kick Partnered"></span>
               </div>
             </div>
             {/* SnFx */}
-            <div className="group flex items-baseline justify-between cursor-pointer border-b border-white/5 pb-2 hover:border-white/20 transition-colors">
-              <div className="text-secondary text-[10px] group-hover:text-white transition-colors uppercase flex items-center gap-2">
-                <span className="text-tertiary opacity-30 text-xs">~</span> SnFx
+            <div className="group flex items-baseline justify-between cursor-pointer border-b border-white/5 pb-2 hover:border-[#c8102e]/50 transition-colors">
+              <div className="text-white text-[10px] group-hover:text-[#c8102e] transition-colors uppercase flex items-center gap-2">
+                <span className="text-secondary opacity-50 text-xs">-</span> SnFx
               </div>
-              <div className="text-[9px] text-tertiary flex items-center gap-2">
-                1.3K CCV
-                <span className="w-1.5 h-1.5 bg-white/20 rounded-sm"></span>
+              <div className="text-[9px] text-secondary flex items-center gap-2">
+                1.3K Subs
+                <span className="w-1.5 h-1.5 bg-[#c8102e] rounded-sm" title="YouTube Only"></span>
               </div>
             </div>
           </div>
