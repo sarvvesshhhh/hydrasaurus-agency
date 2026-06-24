@@ -39,13 +39,13 @@ export default function Navbar({ sidebarOpen }: { sidebarOpen: boolean }) {
         </Link>
       </div>
       <div className="hidden md:flex items-center gap-12">
-        <Link href="#" className="font-label-caps text-[10px] text-secondary hover:text-white transition-colors uppercase">
+        <Link href="/directory" className="font-label-caps text-[10px] text-secondary hover:text-white transition-colors uppercase">
           Directory
         </Link>
-        <Link href="#" className="font-label-caps text-[10px] text-secondary hover:text-white transition-colors uppercase">
+        <Link href="/operations" className="font-label-caps text-[10px] text-secondary hover:text-white transition-colors uppercase">
           Operations
         </Link>
-        <Link href="#" className="font-label-caps text-[10px] text-secondary hover:text-white transition-colors uppercase">
+        <Link href="/logistics" className="font-label-caps text-[10px] text-secondary hover:text-white transition-colors uppercase">
           Logistics
         </Link>
       </div>
