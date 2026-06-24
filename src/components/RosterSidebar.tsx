@@ -65,7 +65,10 @@ export default function RosterSidebar({ isOpen, onClose }: RosterSidebarProps) {
               </div>
               <div className="text-[9px] text-secondary flex items-center gap-2">
                 115.0K Subs
-                <span className="w-1.5 h-1.5 bg-[#53FC18] rounded-sm" title="Kick Partnered"></span>
+                <span className="flex gap-1">
+                  <span className="w-1.5 h-1.5 bg-[#c8102e] rounded-sm" title="YouTube"></span>
+                  <span className="w-1.5 h-1.5 bg-[#53FC18] rounded-sm" title="Kick Partnered"></span>
+                </span>
               </div>
             </div>
             {/* iMRocky */}
@@ -75,7 +78,10 @@ export default function RosterSidebar({ isOpen, onClose }: RosterSidebarProps) {
               </div>
               <div className="text-[9px] text-secondary flex items-center gap-2">
                 52.0K Subs
-                <span className="w-1.5 h-1.5 bg-[#53FC18] rounded-sm" title="Kick Partnered"></span>
+                <span className="flex gap-1">
+                  <span className="w-1.5 h-1.5 bg-[#c8102e] rounded-sm" title="YouTube"></span>
+                  <span className="w-1.5 h-1.5 bg-[#53FC18] rounded-sm" title="Kick Partnered"></span>
+                </span>
               </div>
             </div>
             {/* Arnav Gaming */}
@@ -85,7 +91,10 @@ export default function RosterSidebar({ isOpen, onClose }: RosterSidebarProps) {
               </div>
               <div className="text-[9px] text-secondary flex items-center gap-2">
                 38.0K Subs
-                <span className="w-1.5 h-1.5 bg-[#53FC18] rounded-sm" title="Kick Partnered"></span>
+                <span className="flex gap-1">
+                  <span className="w-1.5 h-1.5 bg-[#c8102e] rounded-sm" title="YouTube"></span>
+                  <span className="w-1.5 h-1.5 bg-[#53FC18] rounded-sm" title="Kick Partnered"></span>
+                </span>
               </div>
             </div>
             {/* RadBriefing */}
@@ -95,7 +104,10 @@ export default function RosterSidebar({ isOpen, onClose }: RosterSidebarProps) {
               </div>
               <div className="text-[9px] text-secondary flex items-center gap-2">
                 36.5K Subs
-                <span className="w-1.5 h-1.5 bg-[#53FC18] rounded-sm" title="Kick Partnered"></span>
+                <span className="flex gap-1">
+                  <span className="w-1.5 h-1.5 bg-[#c8102e] rounded-sm" title="YouTube"></span>
+                  <span className="w-1.5 h-1.5 bg-[#53FC18] rounded-sm" title="Kick Partnered"></span>
+                </span>
               </div>
             </div>
             {/* The Deadshot */}
@@ -105,7 +117,10 @@ export default function RosterSidebar({ isOpen, onClose }: RosterSidebarProps) {
               </div>
               <div className="text-[9px] text-secondary flex items-center gap-2">
                 24.8K Subs
-                <span className="w-1.5 h-1.5 bg-[#53FC18] rounded-sm" title="Kick Partnered"></span>
+                <span className="flex gap-1">
+                  <span className="w-1.5 h-1.5 bg-[#c8102e] rounded-sm" title="YouTube"></span>
+                  <span className="w-1.5 h-1.5 bg-[#53FC18] rounded-sm" title="Kick Partnered"></span>
+                </span>
               </div>
             </div>
             {/* Asuka Bae */}
@@ -115,7 +130,10 @@ export default function RosterSidebar({ isOpen, onClose }: RosterSidebarProps) {
               </div>
               <div className="text-[9px] text-secondary flex items-center gap-2">
                 21.0K Subs
-                <span className="w-1.5 h-1.5 bg-[#53FC18] rounded-sm" title="Kick Partnered"></span>
+                <span className="flex gap-1">
+                  <span className="w-1.5 h-1.5 bg-[#c8102e] rounded-sm" title="YouTube"></span>
+                  <span className="w-1.5 h-1.5 bg-[#53FC18] rounded-sm" title="Kick Partnered"></span>
+                </span>
               </div>
             </div>
             {/* BacKFire */}
@@ -125,7 +143,10 @@ export default function RosterSidebar({ isOpen, onClose }: RosterSidebarProps) {
               </div>
               <div className="text-[9px] text-secondary flex items-center gap-2">
                 19.4K Subs
-                <span className="w-1.5 h-1.5 bg-[#53FC18] rounded-sm" title="Kick Partnered"></span>
+                <span className="flex gap-1">
+                  <span className="w-1.5 h-1.5 bg-[#c8102e] rounded-sm" title="YouTube"></span>
+                  <span className="w-1.5 h-1.5 bg-[#53FC18] rounded-sm" title="Kick Partnered"></span>
+                </span>
               </div>
             </div>
             {/* Eliminator */}
@@ -135,7 +156,10 @@ export default function RosterSidebar({ isOpen, onClose }: RosterSidebarProps) {
               </div>
               <div className="text-[9px] text-secondary flex items-center gap-2">
                 18.5K Subs
-                <span className="w-1.5 h-1.5 bg-[#53FC18] rounded-sm" title="Kick Partnered"></span>
+                <span className="flex gap-1">
+                  <span className="w-1.5 h-1.5 bg-[#c8102e] rounded-sm" title="YouTube"></span>
+                  <span className="w-1.5 h-1.5 bg-[#53FC18] rounded-sm" title="Kick Partnered"></span>
+                </span>
               </div>
             </div>
             {/* Typhon */}
@@ -145,7 +169,10 @@ export default function RosterSidebar({ isOpen, onClose }: RosterSidebarProps) {
               </div>
               <div className="text-[9px] text-secondary flex items-center gap-2">
                 15.5K Subs
-                <span className="w-1.5 h-1.5 bg-[#53FC18] rounded-sm" title="Kick Partnered"></span>
+                <span className="flex gap-1">
+                  <span className="w-1.5 h-1.5 bg-[#c8102e] rounded-sm" title="YouTube"></span>
+                  <span className="w-1.5 h-1.5 bg-[#53FC18] rounded-sm" title="Kick Partnered"></span>
+                </span>
               </div>
             </div>
             {/* SHREE PlayZ */}
@@ -155,7 +182,10 @@ export default function RosterSidebar({ isOpen, onClose }: RosterSidebarProps) {
               </div>
               <div className="text-[9px] text-secondary flex items-center gap-2">
                 15.0K Subs
-                <span className="w-1.5 h-1.5 bg-[#53FC18] rounded-sm" title="Kick Partnered"></span>
+                <span className="flex gap-1">
+                  <span className="w-1.5 h-1.5 bg-[#c8102e] rounded-sm" title="YouTube"></span>
+                  <span className="w-1.5 h-1.5 bg-[#53FC18] rounded-sm" title="Kick Partnered"></span>
+                </span>
               </div>
             </div>
             {/* DollyIsLive */}
@@ -165,7 +195,10 @@ export default function RosterSidebar({ isOpen, onClose }: RosterSidebarProps) {
               </div>
               <div className="text-[9px] text-secondary flex items-center gap-2">
                 13.9K Subs
-                <span className="w-1.5 h-1.5 bg-[#53FC18] rounded-sm" title="Kick Partnered"></span>
+                <span className="flex gap-1">
+                  <span className="w-1.5 h-1.5 bg-[#c8102e] rounded-sm" title="YouTube"></span>
+                  <span className="w-1.5 h-1.5 bg-[#53FC18] rounded-sm" title="Kick Partnered"></span>
+                </span>
               </div>
             </div>
             {/* Laila playzz */}
@@ -175,7 +208,10 @@ export default function RosterSidebar({ isOpen, onClose }: RosterSidebarProps) {
               </div>
               <div className="text-[9px] text-secondary flex items-center gap-2">
                 13.6K Subs
-                <span className="w-1.5 h-1.5 bg-[#53FC18] rounded-sm" title="Kick Partnered"></span>
+                <span className="flex gap-1">
+                  <span className="w-1.5 h-1.5 bg-[#c8102e] rounded-sm" title="YouTube"></span>
+                  <span className="w-1.5 h-1.5 bg-[#53FC18] rounded-sm" title="Kick Partnered"></span>
+                </span>
               </div>
             </div>
             {/* BeLikeHanna */}
@@ -185,7 +221,10 @@ export default function RosterSidebar({ isOpen, onClose }: RosterSidebarProps) {
               </div>
               <div className="text-[9px] text-secondary flex items-center gap-2">
                 12.0K Subs
-                <span className="w-1.5 h-1.5 bg-[#53FC18] rounded-sm" title="Kick Partnered"></span>
+                <span className="flex gap-1">
+                  <span className="w-1.5 h-1.5 bg-[#c8102e] rounded-sm" title="YouTube"></span>
+                  <span className="w-1.5 h-1.5 bg-[#53FC18] rounded-sm" title="Kick Partnered"></span>
+                </span>
               </div>
             </div>
             {/* M4GOD */}
@@ -195,7 +234,10 @@ export default function RosterSidebar({ isOpen, onClose }: RosterSidebarProps) {
               </div>
               <div className="text-[9px] text-secondary flex items-center gap-2">
                 10.0K Subs
-                <span className="w-1.5 h-1.5 bg-[#53FC18] rounded-sm" title="Kick Partnered"></span>
+                <span className="flex gap-1">
+                  <span className="w-1.5 h-1.5 bg-[#c8102e] rounded-sm" title="YouTube"></span>
+                  <span className="w-1.5 h-1.5 bg-[#53FC18] rounded-sm" title="Kick Partnered"></span>
+                </span>
               </div>
             </div>
             {/* ABHiBERG Unfiltered */}
@@ -205,7 +247,10 @@ export default function RosterSidebar({ isOpen, onClose }: RosterSidebarProps) {
               </div>
               <div className="text-[9px] text-secondary flex items-center gap-2">
                 7.4K Subs
-                <span className="w-1.5 h-1.5 bg-[#53FC18] rounded-sm" title="Kick Partnered"></span>
+                <span className="flex gap-1">
+                  <span className="w-1.5 h-1.5 bg-[#c8102e] rounded-sm" title="YouTube"></span>
+                  <span className="w-1.5 h-1.5 bg-[#53FC18] rounded-sm" title="Kick Partnered"></span>
+                </span>
               </div>
             </div>
             {/* DeepZ9k */}
@@ -225,7 +270,10 @@ export default function RosterSidebar({ isOpen, onClose }: RosterSidebarProps) {
               </div>
               <div className="text-[9px] text-secondary flex items-center gap-2">
                 4.2K Subs
-                <span className="w-1.5 h-1.5 bg-[#53FC18] rounded-sm" title="Kick Partnered"></span>
+                <span className="flex gap-1">
+                  <span className="w-1.5 h-1.5 bg-[#c8102e] rounded-sm" title="YouTube"></span>
+                  <span className="w-1.5 h-1.5 bg-[#53FC18] rounded-sm" title="Kick Partnered"></span>
+                </span>
               </div>
             </div>
             {/* Mxrsh */}
@@ -235,7 +283,10 @@ export default function RosterSidebar({ isOpen, onClose }: RosterSidebarProps) {
               </div>
               <div className="text-[9px] text-secondary flex items-center gap-2">
                 2.5K Subs
-                <span className="w-1.5 h-1.5 bg-[#53FC18] rounded-sm" title="Kick Partnered"></span>
+                <span className="flex gap-1">
+                  <span className="w-1.5 h-1.5 bg-[#c8102e] rounded-sm" title="YouTube"></span>
+                  <span className="w-1.5 h-1.5 bg-[#53FC18] rounded-sm" title="Kick Partnered"></span>
+                </span>
               </div>
             </div>
             {/* Brian Playzz */}
@@ -255,7 +306,10 @@ export default function RosterSidebar({ isOpen, onClose }: RosterSidebarProps) {
               </div>
               <div className="text-[9px] text-secondary flex items-center gap-2">
                 2.3K Subs
-                <span className="w-1.5 h-1.5 bg-[#53FC18] rounded-sm" title="Kick Partnered"></span>
+                <span className="flex gap-1">
+                  <span className="w-1.5 h-1.5 bg-[#c8102e] rounded-sm" title="YouTube"></span>
+                  <span className="w-1.5 h-1.5 bg-[#53FC18] rounded-sm" title="Kick Partnered"></span>
+                </span>
               </div>
             </div>
             {/* SnFx */}
