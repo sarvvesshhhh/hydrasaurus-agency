@@ -210,14 +210,44 @@ export default async function TalentPage({ params }: { params: Promise<{ slug: s
                 Active since {displayJoined}. Mapped from {displayCountry}.
               </p>
             </div>
-            {talent.social && (
-              <div>
-                <h3 className="text-white/30 text-[10px] font-bold uppercase tracking-widest mb-2">Social Hub</h3>
-                <a href={`https://${talent.social}`} target="_blank" rel="noopener noreferrer" className="text-[#E3C287] hover:underline text-sm font-medium">
-                  {talent.social}
-                </a>
+            <div>
+              <h3 className="text-white/30 text-[10px] font-bold uppercase tracking-widest mb-3">Social Hub</h3>
+              <div className="flex flex-col gap-3">
+                {talent.youtubeUrl && (
+                  <a 
+                    href={talent.youtubeUrl} 
+                    target="_blank" 
+                    rel="noopener noreferrer" 
+                    className="text-[#ff0000] hover:underline text-sm font-medium flex items-center gap-2 group w-fit"
+                  >
+                    <span className="w-1.5 h-1.5 bg-[#c8102e] rounded-sm group-hover:scale-125 transition-transform duration-300"></span>
+                    YouTube Channel
+                  </a>
+                )}
+                {talent.kickUrl && (
+                  <a 
+                    href={talent.kickUrl} 
+                    target="_blank" 
+                    rel="noopener noreferrer" 
+                    className="text-[#53FC18] hover:underline text-sm font-medium flex items-center gap-2 group w-fit"
+                  >
+                    <span className="w-1.5 h-1.5 bg-[#53FC18] rounded-sm group-hover:scale-125 transition-transform duration-300"></span>
+                    Kick Profile
+                  </a>
+                )}
+                {talent.social && (
+                  <a 
+                    href={`https://${talent.social}`} 
+                    target="_blank" 
+                    rel="noopener noreferrer" 
+                    className="text-[#E3C287] hover:underline text-sm font-medium flex items-center gap-2 group w-fit"
+                  >
+                    <span className="w-1.5 h-1.5 bg-[#E3C287] rounded-sm group-hover:scale-125 transition-transform duration-300"></span>
+                    {talent.social.includes('instagram.com') ? 'Instagram' : talent.social}
+                  </a>
+                )}
               </div>
-            )}
+            </div>
           </div>
           
           <div className="flex flex-col gap-6">

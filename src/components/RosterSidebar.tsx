@@ -100,27 +100,47 @@ export default function RosterSidebar({ isOpen, onClose }: RosterSidebarProps) {
               const displaySubs = liveCount || creator.subscribers;
 
               return (
-                <Link 
+                <div 
                   key={creator.slug}
-                  href={`/talent/${creator.slug}`}
-                  onClick={onClose}
-                  className="group flex items-baseline justify-between cursor-pointer border-b border-white/5 pb-2 hover:border-[#c8102e]/50 transition-colors"
+                  className="group flex items-baseline justify-between border-b border-white/5 pb-2 hover:border-[#c8102e]/50 transition-colors"
                 >
-                  <div className="text-white text-[10px] group-hover:text-[#c8102e] transition-colors uppercase flex items-center gap-2">
+                  <Link 
+                    href={`/talent/${creator.slug}`}
+                    onClick={onClose}
+                    className="text-white text-[10px] group-hover:text-[#c8102e] transition-colors uppercase flex items-center gap-2 cursor-pointer"
+                  >
                     <span className="text-secondary opacity-50 text-xs">-</span> {creator.name}
+                  </Link>
+                  <div className="text-[9px] text-secondary flex items-center gap-2.5">
+                    <Link
+                      href={`/talent/${creator.slug}`}
+                      onClick={onClose}
+                      className="hover:text-white transition-colors cursor-pointer mr-1"
+                    >
+                      {displaySubs} Subs
+                    </Link>
+                    <span className="flex gap-1.5 items-center">
+                      {creator.youtubeUrl && (
+                        <a 
+                          href={creator.youtubeUrl}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          className="w-2 h-2 bg-[#c8102e] rounded-sm hover:scale-125 hover:bg-[#ff0000] hover:shadow-[0_0_8px_rgba(255,0,0,0.8)] transition-all duration-300 inline-block cursor-pointer"
+                          title="Open YouTube Channel"
+                        ></a>
+                      )}
+                      {creator.kickUrl && (
+                        <a 
+                          href={creator.kickUrl}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          className="w-2 h-2 bg-[#53FC18] rounded-sm hover:scale-125 hover:bg-[#53fc18] hover:shadow-[0_0_8px_rgba(83,252,24,0.8)] transition-all duration-300 inline-block cursor-pointer"
+                          title="Open Kick Profile"
+                        ></a>
+                      )}
+                    </span>
                   </div>
-                  <div className="text-[9px] text-secondary flex items-center gap-2">
-                    {displaySubs} Subs
-                    {creator.isKickPartner ? (
-                      <span className="flex gap-1">
-                        <span className="w-1.5 h-1.5 bg-[#c8102e] rounded-sm" title="YouTube"></span>
-                        <span className="w-1.5 h-1.5 bg-[#53FC18] rounded-sm" title="Kick Partnered"></span>
-                      </span>
-                    ) : (
-                      <span className="w-1.5 h-1.5 bg-[#c8102e] rounded-sm" title="YouTube Only"></span>
-                    )}
-                  </div>
-                </Link>
+                </div>
               );
             })}
           </div>
