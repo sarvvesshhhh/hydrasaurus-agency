@@ -102,7 +102,7 @@ export default function Home() {
           </div>
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-16 items-start">
             <div className="lg:col-span-8">
-              <h3 className="font-display-lg text-6xl md:text-8xl lg:text-9xl text-[#c4c7ca] uppercase tracking-tighter leading-none mb-12 opacity-80 group-hover:opacity-100 transition-opacity">REPRESENTATION</h3>
+              <h3 className="font-display-lg text-[clamp(2.5rem,5.2vw,7.5rem)] text-[#c4c7ca] uppercase tracking-tighter leading-none mb-12 opacity-80 group-hover:opacity-100 transition-opacity">REPRESENTATION</h3>
             </div>
             <div className="lg:col-span-4 flex flex-col gap-12 mt-4 lg:mt-0">
               <p className="font-body-md text-base text-secondary leading-relaxed border-l border-[#c8102e]/50 pl-6">
@@ -125,7 +125,7 @@ export default function Home() {
           </div>
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-16 items-start">
             <div className="lg:col-span-8">
-              <h3 className="font-display-lg text-6xl md:text-8xl lg:text-9xl text-[#c4c7ca] uppercase tracking-tighter leading-none mb-12 opacity-80 group-hover:opacity-100 transition-opacity">MONETIZATION</h3>
+              <h3 className="font-display-lg text-[clamp(2.5rem,5.2vw,7.5rem)] text-[#c4c7ca] uppercase tracking-tighter leading-none mb-12 opacity-80 group-hover:opacity-100 transition-opacity">MONETIZATION</h3>
             </div>
             <div className="lg:col-span-4 flex flex-col gap-12 mt-4 lg:mt-0">
               <p className="font-body-md text-base text-secondary leading-relaxed border-l border-[#c8102e]/50 pl-6">
@@ -148,7 +148,7 @@ export default function Home() {
           </div>
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-16 items-start">
             <div className="lg:col-span-8">
-              <h3 className="font-display-lg text-6xl md:text-8xl lg:text-9xl text-[#c4c7ca] uppercase tracking-tighter leading-none mb-12 opacity-80 group-hover:opacity-100 transition-opacity">OPERATIONS</h3>
+              <h3 className="font-display-lg text-[clamp(2.5rem,5.2vw,7.5rem)] text-[#c4c7ca] uppercase tracking-tighter leading-none mb-12 opacity-80 group-hover:opacity-100 transition-opacity">OPERATIONS</h3>
             </div>
             <div className="lg:col-span-4 flex flex-col gap-12 mt-4 lg:mt-0">
               <p className="font-body-md text-base text-secondary leading-relaxed border-l border-[#c8102e]/50 pl-6">
@@ -171,7 +171,7 @@ export default function Home() {
           </div>
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-16 items-start">
             <div className="lg:col-span-8">
-              <h3 className="font-display-lg text-6xl md:text-8xl lg:text-9xl text-[#c4c7ca] uppercase tracking-tighter leading-none mb-12 opacity-80 group-hover:opacity-100 transition-opacity">EXPANSION</h3>
+              <h3 className="font-display-lg text-[clamp(2.5rem,5.2vw,7.5rem)] text-[#c4c7ca] uppercase tracking-tighter leading-none mb-12 opacity-80 group-hover:opacity-100 transition-opacity">EXPANSION</h3>
             </div>
             <div className="lg:col-span-4 flex flex-col gap-12 mt-4 lg:mt-0">
               <p className="font-body-md text-base text-secondary leading-relaxed border-l border-[#c8102e]/50 pl-6">
