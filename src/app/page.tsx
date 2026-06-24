@@ -305,7 +305,7 @@ export default function Home() {
               <img 
                 alt="DollyIsLive" 
                 className="w-full h-full object-cover grayscale opacity-60 group-hover:opacity-100 group-hover:scale-105 transition-all duration-700 mix-blend-lighten" 
-                src="/dolly.png"
+                src={portfolioStats.dollyislive?.avatarUrl || "/dolly.png"}
               />
               <div className="absolute inset-0 bg-gradient-to-t from-black via-transparent to-transparent opacity-80"></div>
             </div>
@@ -340,7 +340,7 @@ export default function Home() {
               <img 
                 alt="WhyisSelena" 
                 className="w-full h-full object-cover grayscale opacity-60 group-hover:opacity-100 group-hover:scale-105 transition-all duration-700 mix-blend-lighten" 
-                src="/selena.png"
+                src={portfolioStats.whyisselena?.avatarUrl || "/selena.png"}
               />
               <div className="absolute inset-0 bg-gradient-to-t from-black via-transparent to-transparent opacity-80"></div>
             </div>
