@@ -26,6 +26,7 @@ export const rosterData: Record<string, Creator> = {
     youtubeHandle: "@PNSYED",
     youtubeChannelId: "UC-Tbl7UT0Ffm49IeRc7CSlg",
     youtubeUrl: "https://youtube.com/@PNSYED",
+    kickUrl: "https://kick.com/pnsyed",
     isKickPartner: true
   },
   imrocky: {
@@ -35,6 +36,7 @@ export const rosterData: Record<string, Creator> = {
     youtubeHandle: "@iMRocky",
     youtubeChannelId: "UCdZSSMQI6vWr3VneoNuv9SQ",
     youtubeUrl: "https://youtube.com/@iMRocky",
+    kickUrl: "https://kick.com/imrocky",
     isKickPartner: true
   },
   arnavgaming: {
@@ -44,6 +46,7 @@ export const rosterData: Record<string, Creator> = {
     youtubeHandle: "@ARNAVGAMING",
     youtubeChannelId: "UC6ArZpt3EQ4OGrZ5fjch_rg",
     youtubeUrl: "https://youtube.com/@ARNAVGAMING",
+    kickUrl: "https://kick.com/arnavgaming",
     isKickPartner: true
   },
   asukabae: {
@@ -53,6 +56,7 @@ export const rosterData: Record<string, Creator> = {
     youtubeHandle: "@AsukaBae",
     youtubeChannelId: "UCDVQYp-GGoqbJWomfFaKKeg",
     youtubeUrl: "https://youtube.com/@AsukaBae",
+    kickUrl: "https://kick.com/asukabae",
     isKickPartner: true
   },
   eliminator: {
@@ -62,6 +66,7 @@ export const rosterData: Record<string, Creator> = {
     youtubeHandle: "@imeliminator",
     youtubeChannelId: "UC_1wX6o_jQ6uOxdw8j_xoZg",
     youtubeUrl: "https://youtube.com/@imeliminator",
+    kickUrl: "https://kick.com/imeliminator",
     isKickPartner: true
   },
   shreeplayz: {
@@ -71,6 +76,7 @@ export const rosterData: Record<string, Creator> = {
     youtubeHandle: "@SHREEPlayZ",
     youtubeChannelId: "UCA6qqnQ6u_WRDNkfdvD-N1g",
     youtubeUrl: "https://youtube.com/@SHREEPlayZ",
+    kickUrl: "https://kick.com/shreeplayz",
     isKickPartner: true
   },
   abhibergunfiltered: {
@@ -80,6 +86,7 @@ export const rosterData: Record<string, Creator> = {
     youtubeHandle: "@AbhibergUnfiltered",
     youtubeChannelId: "UCxJa4ZKnXl5KarWGWdNo0fw",
     youtubeUrl: "https://youtube.com/@AbhibergUnfiltered",
+    kickUrl: "https://kick.com/abhiberg",
     isKickPartner: true
   },
   thedeadshot: {
@@ -89,6 +96,7 @@ export const rosterData: Record<string, Creator> = {
     youtubeHandle: "@thedeadshott",
     youtubeChannelId: "UCf-T1vPbbMMzKxJcNLwXPfQ",
     youtubeUrl: "https://youtube.com/@thedeadshott",
+    kickUrl: "https://kick.com/thedeadshott",
     isKickPartner: true
   },
   backfire: {
@@ -98,6 +106,7 @@ export const rosterData: Record<string, Creator> = {
     youtubeHandle: "@BacKFFR",
     youtubeChannelId: "UCKeIVjp5pExBXUjwlq_GSyg",
     youtubeUrl: "https://youtube.com/@BacKFFR",
+    kickUrl: "https://kick.com/backfiretv",
     isKickPartner: true
   },
   typhon: {
@@ -107,6 +116,7 @@ export const rosterData: Record<string, Creator> = {
     youtubeHandle: "@TYPHONisLivee",
     youtubeChannelId: "UCADW4EcCkiXkp9ScwbsiYdA",
     youtubeUrl: "https://youtube.com/@TYPHONisLivee",
+    kickUrl: "https://kick.com/typhonl1ve",
     isKickPartner: true
   },
   dollyislive: {
@@ -134,6 +144,7 @@ export const rosterData: Record<string, Creator> = {
     youtubeHandle: "@lailaplayzz",
     youtubeChannelId: "UCPcKzGvifyxaZuksBZYn0xg",
     youtubeUrl: "https://youtube.com/@lailaplayzz",
+    kickUrl: "https://kick.com/lailaplayzz",
     isKickPartner: true
   },
   belikehanna: {
@@ -143,6 +154,7 @@ export const rosterData: Record<string, Creator> = {
     youtubeHandle: "@belikehanna",
     youtubeChannelId: "UCoYfyfcgIBbceEjT72FAv8A",
     youtubeUrl: "https://youtube.com/@belikehanna",
+    kickUrl: "https://kick.com/belikehanna",
     isKickPartner: true
   },
   m4god: {
@@ -152,6 +164,7 @@ export const rosterData: Record<string, Creator> = {
     youtubeHandle: "@m4godofficial",
     youtubeChannelId: "UCupNRQm2F_vP23nnOYkUjFw",
     youtubeUrl: "https://youtube.com/@m4godofficial",
+    kickUrl: "https://kick.com/m4god",
     isKickPartner: true
   },
   deepz9k: {
@@ -161,7 +174,8 @@ export const rosterData: Record<string, Creator> = {
     youtubeHandle: "@DeepZ9K",
     youtubeChannelId: "UCRaNlzqMtgAetZRuYDDdlTw",
     youtubeUrl: "https://youtube.com/@DeepZ9K",
-    isKickPartner: false
+    kickUrl: "https://kick.com/deepz9k",
+    isKickPartner: true
   },
   damaskplays: {
     slug: "damaskplays",
@@ -170,6 +184,7 @@ export const rosterData: Record<string, Creator> = {
     youtubeHandle: "@DAMASKplays",
     youtubeChannelId: "UCa4bH9tgyGE-S-nbiWpJ05w",
     youtubeUrl: "https://youtube.com/@DAMASKplays",
+    kickUrl: "https://kick.com/damaskplays",
     isKickPartner: true
   },
   mxrsh: {
@@ -179,6 +194,7 @@ export const rosterData: Record<string, Creator> = {
     youtubeHandle: "@not_marsh",
     youtubeChannelId: "UCjE1jD58l0TRrh3KTY3lP0A",
     youtubeUrl: "https://youtube.com/@not_marsh",
+    kickUrl: "https://kick.com/not_marsh",
     isKickPartner: true
   },
   brianplayzz: {
@@ -188,13 +204,14 @@ export const rosterData: Record<string, Creator> = {
     youtubeHandle: "@brianocplays",
     youtubeChannelId: "UCvpnJBDOJf2LfHx5z_YziIA",
     youtubeUrl: "https://youtube.com/@brianocplays",
+    kickUrl: "https://kick.com/brianplayzz",
     role: "Cinematic FPS & Gaming Innovator",
     totalViews: "TBA",
     videos: "TBA",
     joined: "TBA",
     bio: "Delivering high-octane cinematic gameplay and unparalleled FPS mastery.",
     hoverVideo: "https://cdn.coverr.co/videos/coverr-abstract-neon-waves-2253/1080p.mp4",
-    isKickPartner: false
+    isKickPartner: true
   },
   whyisselena: {
     slug: "whyisselena",
@@ -203,12 +220,12 @@ export const rosterData: Record<string, Creator> = {
     youtubeHandle: "@Whyisselena",
     youtubeChannelId: "UCF8Jy62QvzoR_RycLdCyhXw",
     youtubeUrl: "https://youtube.com/@Whyisselena",
+    kickUrl: "https://kick.com/whyisselena",
     role: "Lethal Precision FPS & Content Creator",
     totalViews: "198K+",
     videos: "189",
     joined: "Jan 7, 2021",
     social: "instagram.com/selenaauwu",
-    kickUrl: "https://kick.com/whyisselena",
     image: "/selena.png",
     hoverVideo: "https://cdn.coverr.co/videos/coverr-playing-a-video-game-9626/1080p.mp4",
     isKickPartner: true
@@ -220,13 +237,14 @@ export const rosterData: Record<string, Creator> = {
     youtubeHandle: "@SnFx_111",
     youtubeChannelId: "UCHPdVkoLuzQA4B4atJl0ijA",
     youtubeUrl: "https://youtube.com/@SnFx_111",
+    kickUrl: "https://kick.com/snfxx",
     role: "Cinematic Gaming Virtuoso",
     totalViews: "TBA",
     videos: "TBA",
     joined: "TBA",
     bio: "Pioneering visual storytelling and elite mechanical skill across the gaming spectrum.",
     hoverVideo: "https://cdn.coverr.co/videos/coverr-abstract-glowing-lines-4158/1080p.mp4",
-    isKickPartner: false
+    isKickPartner: true
   },
   radbriefing: {
     slug: "radbriefing",
@@ -235,6 +253,7 @@ export const rosterData: Record<string, Creator> = {
     youtubeHandle: "@OfficialRadBriefingGaming",
     youtubeChannelId: "UC6FT9HcUPrVcNVhixVvxYPw",
     youtubeUrl: "https://youtube.com/@OfficialRadBriefingGaming",
+    kickUrl: "https://kick.com/radbriefing",
     isKickPartner: true
   }
 };
