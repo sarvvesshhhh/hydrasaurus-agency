@@ -1,7 +1,7 @@
 import { NextResponse } from 'next/server';
 import { rosterArray } from '@/data/roster';
 
-export const revalidate = 43200; // Cache this route's output for 12 hours (43200 seconds)
+export const revalidate = 86400; // Cache this route's output for 24 hours (86400 seconds)
 
 export async function GET() {
   const apiKey = process.env.YOUTUBE_API_KEY;
@@ -23,7 +23,7 @@ export async function GET() {
     const url = `https://www.googleapis.com/youtube/v3/channels?part=statistics&id=${channelIds.join(',')}&key=${apiKey}`;
     
     const res = await fetch(url, {
-      next: { revalidate: 43200 } // Cache the fetch request for 12 hours
+      next: { revalidate: 86400 } // Cache the fetch request for 24 hours
     });
 
     if (!res.ok) {
