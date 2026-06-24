@@ -129,7 +129,7 @@ export default function RosterSidebar({ isOpen, onClose }: RosterSidebarProps) {
                           title="Open YouTube Channel"
                         ></a>
                       )}
-                      {creator.kickUrl && (
+                      {creator.isKickPartner && creator.kickUrl && (
                         <a 
                           href={creator.kickUrl}
                           target="_blank"
