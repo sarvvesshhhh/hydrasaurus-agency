@@ -1,5 +1,6 @@
 import Link from 'next/link';
 import LiveStatusBadge from '@/components/LiveStatusBadge';
+import CreatorVideoGallery, { YoutubeVideoDetails } from '@/components/CreatorVideoGallery';
 import { rosterData } from '@/data/roster';
 
 interface YoutubeChannelDetails {
@@ -59,6 +60,45 @@ async function getYoutubeChannelDetails(channelId: string): Promise<YoutubeChann
   }
 }
 
+// Fetch recent channel uploads using standard uploads playlist items
+async function getYoutubeRecentVideos(channelId: string): Promise<YoutubeVideoDetails[]> {
+  const apiKey = process.env.YOUTUBE_API_KEY;
+  if (!apiKey || !channelId || channelId.startsWith("UC_Placeholder")) {
+    return [];
+  }
+
+  try {
+    // Standard uploads playlist ID is channel ID with 'UC' replaced by 'UU'
+    const uploadsPlaylistId = channelId.replace(/^UC/, 'UU');
+    const url = `https://www.googleapis.com/youtube/v3/playlistItems?part=snippet&playlistId=${uploadsPlaylistId}&maxResults=6&key=${apiKey}`;
+    
+    const res = await fetch(url, {
+      next: { revalidate: 3600 } // Cache recent videos for 1 hour
+    });
+
+    if (!res.ok) {
+      console.error(`Failed to fetch recent videos for channel ${channelId}:`, res.statusText);
+      return [];
+    }
+
+    const data = await res.json();
+    if (!data.items) return [];
+
+    return data.items.map((item: any) => {
+      const snippet = item.snippet || {};
+      return {
+        videoId: snippet.resourceId?.videoId,
+        title: snippet.title,
+        thumbnailUrl: snippet.thumbnails?.high?.url || snippet.thumbnails?.medium?.url || snippet.thumbnails?.default?.url,
+        publishedAt: snippet.publishedAt
+      };
+    }).filter((vid: any) => !!vid.videoId);
+  } catch (error) {
+    console.error(`Error resolving recent videos for ${channelId}:`, error);
+    return [];
+  }
+}
+
 function formatCount(countStr?: string): string | null {
   if (!countStr) return null;
   const count = parseInt(countStr, 10);
@@ -109,6 +149,9 @@ export default async function TalentPage({ params }: { params: Promise<{ slug: s
 
   // Query live channel stats from YouTube (cached for 24 hours)
   const liveData = talent.youtubeChannelId ? await getYoutubeChannelDetails(talent.youtubeChannelId) : null;
+
+  // Query recent uploads from YouTube (cached for 1 hour)
+  const recentVideos = talent.youtubeChannelId ? await getYoutubeRecentVideos(talent.youtubeChannelId) : [];
 
   // Resolve assets and analytics with static fallbacks
   const displayName = liveData?.title || talent.name;
@@ -261,15 +304,8 @@ export default async function TalentPage({ params }: { params: Promise<{ slug: s
         </div>
       </div>
 
-      {/* Video Embed */}
-      <div className="w-full max-w-[1200px] aspect-video bg-[#050505]/40 backdrop-blur-md border border-white/10 rounded-[2rem] overflow-hidden flex items-center justify-center relative group cursor-pointer hover:border-[#C8102E]/50 transition-colors">
-        <div className="absolute inset-0 flex flex-col items-center justify-center z-10">
-           <svg className="w-16 h-16 text-[#C8102E] mb-6 opacity-80 group-hover:scale-110 transition-transform duration-500" fill="currentColor" viewBox="0 0 24 24">
-             <path d="M19.615 3.184c-3.604-.246-11.631-.245-15.23 0-3.897.266-4.356 2.62-4.385 8.816.029 6.185.484 8.549 4.385 8.816 3.6.245 11.626.246 15.23 0 3.897-.266 4.356-2.62 4.385-8.816-.029-6.185-.484-8.549-4.385-8.816zm-10.615 12.816v-8l8 3.993-8 4.007z"/>
-           </svg>
-           <span className="text-white/30 text-[10px] font-bold uppercase tracking-widest group-hover:text-white transition-colors">Play Highlight Reel</span>
-        </div>
-      </div>
+      {/* Video Gallery */}
+      <CreatorVideoGallery videos={recentVideos} creatorName={displayName} />
 
     </main>
   );
