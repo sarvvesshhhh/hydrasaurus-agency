@@ -107,6 +107,7 @@ export const rosterData: Record<string, Creator> = {
     youtubeChannelId: "UCKeIVjp5pExBXUjwlq_GSyg",
     youtubeUrl: "https://youtube.com/@BacKFFR",
     kickUrl: "https://kick.com/backfiretv",
+    hoverVideo: "https://cdn.coverr.co/videos/coverr-a-gamer-playing-first-person-shooter-video-game-5658/1080p.mp4",
     isKickPartner: true
   },
   typhon: {

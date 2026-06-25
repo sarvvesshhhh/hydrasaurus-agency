@@ -184,3 +184,27 @@ h1, h2, h3, h4, h5, h6, .font-display-lg, .font-headline-lg, .font-headline-md {
   white-space: nowrap;
 }
 
+/* Custom Infinite Marquee scroll track */
+.marquee-container {
+  overflow: hidden;
+  display: flex;
+  width: 100%;
+}
+.marquee-track {
+  display: flex;
+  gap: 1.5rem;
+  width: max-content;
+  animation: marquee-scroll 55s linear infinite;
+}
+.marquee-track:hover {
+  animation-play-state: paused;
+}
+@keyframes marquee-scroll {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
+}
+
