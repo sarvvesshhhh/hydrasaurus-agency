@@ -9,7 +9,7 @@ const COMMAND_NODES = {
     title: "HYDRASAURUS ENTERTAINMENT HUB",
     status: "ONLINE",
     stats: [
-      { label: "Exclusive Talent", value: "11 Creators" },
+      { label: "Exclusive Talent", value: "21 Creators" },
       { label: "Aggregated Views", value: "1.2B+ Views" },
       { label: "Total Reach", value: "460K+ Subscribers" },
       { label: "Broadcast Range", value: "South Asian Region" }
@@ -23,9 +23,9 @@ const COMMAND_NODES = {
   },
   creators: {
     title: "TALENT ROSTER & LIVE TALENT INDEX",
-    status: "11/11 ACTIVE",
+    status: "21/21 ACTIVE",
     stats: [
-      { label: "Partnered Creators", value: "11 Exclusive" },
+      { label: "Partnered Creators", value: "21 Exclusive" },
       { label: "Core Genres", value: "Variety, FPS, Gaming" },
       { label: "Stream Output", value: "850+ Hours Monthly" },
       { label: "Network Growth", value: "+18% MoM Average" }
@@ -224,7 +224,7 @@ export default function Home() {
         <div className="max-w-[1600px] mx-auto px-6 md:px-20 py-8 grid grid-cols-1 md:grid-cols-4 gap-8 font-label-caps text-[10px] uppercase">
           <div className="flex flex-col gap-3 border-l border-white/10 pl-6">
             <span className="text-[#c8102e] tracking-widest">// METRIC_01</span>
-            <span className="text-white text-base tracking-widest">11+ Partnered Creators</span>
+            <span className="text-white text-base tracking-widest">21 Partnered Creators</span>
           </div>
           <div className="flex flex-col gap-3 border-l border-white/10 pl-6">
             <span className="text-[#c8102e] tracking-widest">// METRIC_02</span>
