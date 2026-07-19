@@ -36,6 +36,100 @@ async function enforcePermission(allowedRoles: UserRole[]) {
   }
 }
 
+// ============================================================================
+// MANUAL COMPOSE MAIL ACTION
+// ============================================================================
+
+export async function sendManualEmailAction(formData: FormData) {
+  await enforcePermission(['ADMIN', 'MANAGER']);
+
+  const brandId = (formData.get('brandId') as string) || null;
+  const toEmail = formData.get('toEmail') as string;
+  const subject = formData.get('subject') as string;
+  const body = formData.get('body') as string;
+
+  if (!toEmail || !subject || !body) {
+    return { error: 'Please fill in To Email, Subject, and Body.' };
+  }
+
+  try {
+    const { sendRawZohoEmail } = await import('@/lib/outreach/zoho');
+    const result = await sendRawZohoEmail({
+      to: toEmail,
+      subject,
+      body
+    });
+
+    if (result.success) {
+      // Find or create default Mailbox record
+      const defaultMailbox = await prisma.mailbox.upsert({
+        where: { email: 'management@hydrasaurusagency.in' },
+        update: {},
+        create: {
+          email: 'management@hydrasaurusagency.in',
+          displayName: 'Hydrasaurus Agency Partnerships'
+        }
+      });
+
+      let targetBrandId = brandId;
+      if (!targetBrandId || targetBrandId.trim() === '') {
+        const domain = toEmail.split('@')[1] || 'direct.com';
+        let existingBrand = await prisma.brand.findFirst({
+          where: { contacts: { some: { email: toEmail } } }
+        });
+
+        if (!existingBrand) {
+          existingBrand = await prisma.brand.create({
+            data: {
+              name: domain.split('.')[0]?.toUpperCase() || 'Direct Lead',
+              website: `https://${domain}`,
+              category: 'Direct Outreach',
+              contacts: {
+                create: [{ name: toEmail.split('@')[0] || 'Marketing Lead', email: toEmail }]
+              }
+            }
+          });
+        }
+        targetBrandId = existingBrand.id;
+      }
+
+      await prisma.sentEmail.create({
+        data: {
+          brandId: targetBrandId,
+          mailboxId: defaultMailbox.id,
+          recipient: toEmail,
+          subject,
+          body,
+          zohoMessageId: result.messageId || `MANUAL_${Date.now()}`,
+          status: 'SENT',
+          sentAt: new Date()
+        }
+      });
+
+      await prisma.brand.update({
+        where: { id: targetBrandId },
+        data: { status: 'SENT' }
+      });
+
+      await prisma.activity.create({
+        data: {
+          brandId: targetBrandId,
+          type: 'EMAIL_SENT',
+          title: 'Custom Email Dispatched via Compose Mail',
+          details: `Sent custom email "${subject}" to ${toEmail}.`
+        }
+      });
+
+      revalidateOutreachPages();
+      return { success: true, messageId: result.messageId };
+    } else {
+      return { error: result.error || 'Failed to dispatch email via Zoho Mail.' };
+    }
+  } catch (e: any) {
+    return { error: e.message };
+  }
+}
+
 // Revalidation helper across all CRM subpages
 function revalidateOutreachPages() {
   revalidatePath('/outreach');
@@ -45,6 +139,7 @@ function revalidateOutreachPages() {
   revalidatePath('/outreach/review');
   revalidatePath('/outreach/queue');
   revalidatePath('/outreach/analytics');
+  revalidatePath('/outreach/compose');
 }
 
 // ============================================================================

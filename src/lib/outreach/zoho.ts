@@ -107,6 +107,60 @@ export function getZohoStatus(): ZohoOAuthStatus {
 }
 
 /**
+ * Generic Zoho Mail Dispatcher
+ */
+export async function sendRawZohoEmail(opts: { to: string; subject: string; body: string }) {
+  const accountId = process.env.ZOHO_ACCOUNT_ID;
+  const token = await getZohoAccessToken();
+
+  if (!accountId) {
+    throw new Error('ZOHO_ACCOUNT_ID is missing in environment variables');
+  }
+
+  const fromAddress = 'management@hydrasaurusagency.in';
+  const payload = {
+    fromAddress,
+    toAddress: opts.to,
+    subject: opts.subject,
+    content: opts.body.replace(/\n/g, '<br/>'),
+    mailFormat: 'html',
+    askReceipt: 'no'
+  };
+
+  const mailEndpoints = [
+    `https://mail.zoho.in/api/v1/accounts/${accountId}/messages`,
+    `https://mail.zoho.com/api/v1/accounts/${accountId}/messages`
+  ];
+
+  let lastError = null;
+
+  for (const endpoint of mailEndpoints) {
+    try {
+      const response = await fetch(endpoint, {
+        method: 'POST',
+        headers: {
+          'Authorization': `Zoho-oauthtoken ${token}`,
+          'Content-Type': 'application/json'
+        },
+        body: JSON.stringify(payload)
+      });
+
+      if (response.ok) {
+        const resData = await response.json();
+        return { success: true, messageId: resData.data?.messageId || `MSG_${Date.now()}` };
+      } else {
+        const errText = await response.text();
+        lastError = new Error(`Zoho API Error (${response.status}): ${errText}`);
+      }
+    } catch (e: any) {
+      lastError = e;
+    }
+  }
+
+  return { success: false, error: lastError?.message || 'Zoho API request failed.' };
+}
+
+/**
  * Sends a production email via Zoho Mail REST API
  */
 export async function sendEmailViaZoho(

@@ -25,6 +25,7 @@ export default function OutreachLayout({ children }: { children: React.ReactNode
 
   const navItems: NavItem[] = [
     { name: 'Dashboard', href: '/outreach', icon: 'dashboard' },
+    { name: 'Compose Mail', href: '/outreach/compose', icon: 'edit_square', badge: 'New' },
     { name: 'Brand CRM', href: '/outreach/brands', icon: 'business_center' },
     { name: 'AI Brand Discovery', href: '/outreach/discovery', icon: 'travel_explore', badge: 'AI' },
     { name: 'Creators Roster', href: '/outreach/creators', icon: 'groups', badge: '25+' },
@@ -66,6 +67,15 @@ export default function OutreachLayout({ children }: { children: React.ReactNode
 
         {/* Global Controls & Status */}
         <div className="flex items-center gap-3">
+          {/* Quick Compose Button */}
+          <Link
+            href="/outreach/compose"
+            className="px-3 py-1.5 rounded-lg bg-red-600 hover:bg-red-500 text-white text-xs font-bold shadow-md shadow-red-600/20 transition-all flex items-center gap-1.5"
+          >
+            <span className="material-symbols-outlined text-sm">edit_square</span>
+            <span className="hidden sm:inline">Compose</span>
+          </Link>
+
           {/* Mailbox Badge */}
           <div className="hidden md:flex items-center gap-2 px-3 py-1.5 rounded-lg bg-white/[0.03] border border-white/10 text-xs text-gray-300">
             <span className="w-2 h-2 rounded-full bg-emerald-500 animate-pulse"></span>
