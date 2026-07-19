@@ -5,15 +5,16 @@ import { prisma } from '@/lib/db';
 export const dynamic = 'force-dynamic';
 
 export default async function DashboardPage() {
-  const brands = await prisma.brand.findMany({
-    where: { isArchived: false },
-    include: { contacts: true, emailDrafts: true, sentEmails: true },
-    orderBy: { leadScore: 'desc' }
-  });
-
+  const [brands, sentCount, pendingApproval] = await Promise.all([
+    prisma.brand.findMany({
+      where: { isArchived: false },
+      include: { contacts: true, emailDrafts: true, sentEmails: true },
+      orderBy: { leadScore: 'desc' }
+    }),
+    prisma.sentEmail.count(),
+    prisma.emailDraft.count({ where: { status: 'DRAFT' } })
+  ]);
   const totalBrands = brands.length;
-  const sentCount = await prisma.sentEmail.count();
-  const pendingApproval = await prisma.emailDraft.count({ where: { status: 'DRAFT' } });
   const activeConversations = brands.filter((b: any) => ['INTERESTED', 'NEED_MORE_INFO'].includes(b.status)).length;
   const meetingsScheduled = brands.filter((b: any) => b.status === 'MEETING_SCHEDULED').length;
   const signedPartnerships = brands.filter((b: any) => b.status === 'PARTNERSHIP_SIGNED').length;

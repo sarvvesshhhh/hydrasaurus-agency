@@ -31,7 +31,7 @@ export default function ClientLayout({ children }: { children: React.ReactNode }
   if (isOutreachSaaS) {
     return (
       <div className="min-h-screen bg-black text-gray-100 flex flex-col font-sans antialiased">
-        <PageTransition>{children}</PageTransition>
+        {children}
       </div>
     );
   }

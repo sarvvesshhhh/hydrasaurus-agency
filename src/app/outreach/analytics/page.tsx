@@ -4,9 +4,11 @@ import { prisma } from '@/lib/db';
 export const dynamic = 'force-dynamic';
 
 export default async function AnalyticsPage() {
-  const brands = await prisma.brand.findMany({ where: { isArchived: false } });
-  const totalSent = await prisma.sentEmail.count();
-  const totalDrafts = await prisma.emailDraft.count();
+  const [brands, totalSent, totalDrafts] = await Promise.all([
+    prisma.brand.findMany({ where: { isArchived: false } }),
+    prisma.sentEmail.count(),
+    prisma.emailDraft.count()
+  ]);
 
   const statuses = [
     { label: 'Pending / Initial', key: 'PENDING', color: 'bg-gray-500' },
