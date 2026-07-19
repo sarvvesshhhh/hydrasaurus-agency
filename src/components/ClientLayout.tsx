@@ -1,6 +1,7 @@
 'use client';
 
 import { useState, useEffect } from 'react';
+import { usePathname } from 'next/navigation';
 import Navbar from './Navbar';
 import Footer from './Footer';
 import RosterSidebar from './RosterSidebar';
@@ -8,9 +9,11 @@ import SmoothScroll from './SmoothScroll';
 import PageTransition from './PageTransition';
 
 export default function ClientLayout({ children }: { children: React.ReactNode }) {
+  const pathname = usePathname();
+  const isOutreachSaaS = pathname?.startsWith('/outreach');
   const [sidebarOpen, setSidebarOpen] = useState(true);
 
-  // Set initial state based on window size
+  // Set initial state based on window size for public agency pages
   useEffect(() => {
     const handleResize = () => {
       if (window.innerWidth < 1024) {
@@ -24,6 +27,16 @@ export default function ClientLayout({ children }: { children: React.ReactNode }
     return () => window.removeEventListener('resize', handleResize);
   }, []);
 
+  // Isolated SaaS Shell Layout for /outreach (No public navbar, footer, or agency roster sidebar)
+  if (isOutreachSaaS) {
+    return (
+      <div className="min-h-screen bg-black text-gray-100 flex flex-col font-sans antialiased">
+        <PageTransition>{children}</PageTransition>
+      </div>
+    );
+  }
+
+  // Public Agency Website Layout
   return (
     <div className={`min-h-screen flex flex-col relative ${sidebarOpen ? 'sidebar-open' : ''}`}>
       {/* Sidebar Toggle Button */}

@@ -1,0 +1,322 @@
+// Hydrasaurus Outreach AI - Database Schema (Prisma ORM for PostgreSQL / Neon)
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "postgresql"
+}
+
+enum UserRole {
+  ADMIN
+  MANAGER
+  VIEWER
+}
+
+enum BrandStatus {
+  PENDING
+  RESEARCHING
+  RESEARCH_COMPLETE
+  DRAFT_GENERATED
+  AWAITING_APPROVAL
+  SENT
+  INTERESTED
+  NOT_INTERESTED
+  NEED_MORE_INFO
+  MEETING_SCHEDULED
+  PARTNERSHIP_SIGNED
+  FOLLOW_UP_REQUIRED
+  CLOSED
+}
+
+enum DraftStatus {
+  DRAFT
+  APPROVED
+  REJECTED
+}
+
+enum DispatchStatus {
+  QUEUED
+  SENDING
+  SENT
+  FAILED
+}
+
+enum FollowUpStatus {
+  SCHEDULED
+  SENT
+  CANCELLED
+}
+
+enum KnowledgeCategory {
+  PITCH_DECK
+  AGENCY_INTRO
+  CREATOR_BIO
+  CASE_STUDY
+  SPONSORSHIP_PACKAGE
+  FAQ
+}
+
+model User {
+  id        String   @id @default(cuid())
+  email     String   @unique
+  name      String
+  role      UserRole @default(MANAGER)
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+  activities Activity[]
+}
+
+model Mailbox {
+  id           String      @id @default(cuid())
+  email        String      @unique // Seeded with management@hydrasaurusagency.in
+  displayName  String      @default("Hydrasaurus Agency Management")
+  zohoClientId String?
+  zohoSecret   String?
+  refreshToken String?
+  isDefault    Boolean     @default(true)
+  dailyLimit   Int         @default(100)
+  sentToday    Int         @default(0)
+  createdAt    DateTime    @default(now())
+  updatedAt    DateTime    @updatedAt
+  sentEmails   SentEmail[]
+}
+
+model Creator {
+  id           String   @id @default(cuid())
+  name         String
+  platform     String   // "YouTube", "Kick", "Twitch"
+  category     String   // "Gaming", "GTA RP", "FPS", "Variety", "Livestreaming"
+  subscribers  String   // e.g. "115.0K"
+  followers    String   // e.g. "45.0K"
+  avgViews     String   // e.g. "25.0K"
+  country      String   @default("India")
+  languages    String[] @default(["English", "Hindi"])
+  bio          String?
+  youtubeUrl   String?
+  kickUrl      String?
+  isActive     Boolean  @default(true)
+  isArchived   Boolean  @default(false)
+  createdAt    DateTime @default(now())
+  updatedAt    DateTime @updatedAt
+
+
+  @@index([category])
+  @@index([platform])
+}
+
+model Brand {
+  id                String            @id @default(cuid())
+  name              String
+  website           String
+  category          String            // e.g. "Energy Drinks", "Peripherals", "SaaS", "D2C"
+  status            BrandStatus       @default(PENDING)
+  leadScore         Int               @default(50) // 0 - 100
+  brandSizeScore    Int               @default(50)
+  gamingRelScore    Int               @default(50)
+  sponsHistScore    Int               @default(50)
+  contactQualScore  Int               @default(50)
+  audienceOverScore Int               @default(50)
+  notesCount        Int               @default(0)
+  isArchived        Boolean           @default(false)
+  lastActivityAt    DateTime          @default(now())
+  createdAt         DateTime          @default(now())
+  updatedAt         DateTime          @updatedAt
+
+
+  contacts          Contact[]
+  researchProfile   ResearchProfile?
+  emailDrafts       EmailDraft[]
+  sentEmails        SentEmail[]
+  followUps         FollowUp[]
+  mediaKits         MediaKit[]
+  notes             Note[]
+  activities        Activity[]
+
+  @@index([status])
+  @@index([leadScore(sort: Desc)])
+  @@index([category])
+}
+
+model Contact {
+  id        String   @id @default(cuid())
+  brandId   String
+  name      String
+  email     String
+  role      String?  @default("Marketing Manager")
+  phone     String?
+  isPrimary Boolean  @default(true)
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+
+  brand     Brand    @relation(fields: [brandId], references: [id], onDelete: Cascade)
+
+  @@index([brandId])
+}
+
+model ResearchProfile {
+  id                   String   @id @default(cuid())
+  brandId              String   @unique
+  description          String
+  productCategory      String
+  targetAudience       String
+  brandPositioning     String
+  brandTone            String
+  marketingStyle       String
+  creatorOpportunities String
+  sponsorshipAngles    String
+  audienceOverlap      String
+  recommendedType      String   // "Sponsorship", "Creator Campaign", "Product Placement", etc.
+  matchedCreatorIds    String[] // Array of Creator IDs
+  autoPitchReasoning   String   // Rationale for why specific creators match
+  rawInsights          String?  // JSON string
+  createdAt            DateTime @default(now())
+  updatedAt            DateTime @updatedAt
+
+  brand                Brand    @relation(fields: [brandId], references: [id], onDelete: Cascade)
+}
+
+model KnowledgeItem {
+  id        String            @id @default(cuid())
+  title     String
+  category  KnowledgeCategory
+  content   String
+  tags      String[]
+  isActive  Boolean           @default(true)
+  isArchived Boolean          @default(false)
+  createdAt DateTime          @default(now())
+  updatedAt DateTime          @updatedAt
+
+
+  @@index([category])
+}
+
+model MediaKit {
+  id                String   @id @default(cuid())
+  brandId           String
+  agencyIntro       String
+  matchedCreators   String   // JSON string snapshot of creators
+  totalReach        String
+  partnershipIdeas  String   // JSON string of packages
+  pdfUrl            String?
+  createdAt         DateTime @default(now())
+
+  brand             Brand    @relation(fields: [brandId], references: [id], onDelete: Cascade)
+
+  @@index([brandId])
+}
+
+model EmailDraft {
+  id                   String      @id @default(cuid())
+  brandId              String
+  subject              String
+  body                 String      // Max 150 words pitch
+  matchedCreatorIds    String[]
+  partnershipAngle     String
+  callToAction         String
+  status               DraftStatus @default(DRAFT)
+  version              Int         @default(1)
+  editorFeedback       String?
+  approvedBy           String?
+  createdAt            DateTime    @default(now())
+  updatedAt            DateTime    @updatedAt
+
+  brand                Brand       @relation(fields: [brandId], references: [id], onDelete: Cascade)
+  sentEmails           SentEmail[]
+
+  @@index([brandId])
+  @@index([status])
+}
+
+model SentEmail {
+  id            String         @id @default(cuid())
+  brandId       String
+  draftId       String?
+  mailboxId     String
+  recipient     String
+  subject       String
+  body          String
+  zohoMessageId String?
+  status        DispatchStatus @default(QUEUED)
+  sentAt        DateTime?
+  openedAt      DateTime?
+  repliedAt     DateTime?
+  replyContent  String?
+  sentiment     BrandStatus?   // Reply classification status
+  createdAt     DateTime       @default(now())
+
+  brand         Brand          @relation(fields: [brandId], references: [id], onDelete: Cascade)
+  draft         EmailDraft?    @relation(fields: [draftId], references: [id], onDelete: SetNull)
+  mailbox       Mailbox        @relation(fields: [mailboxId], references: [id])
+
+  @@index([brandId])
+  @@index([status])
+}
+
+model FollowUp {
+  id            String         @id @default(cuid())
+  brandId       String
+  sequenceNumber Int            // 1, 2, 3
+  scheduledFor  DateTime
+  subject       String
+  body          String
+  status        FollowUpStatus @default(SCHEDULED)
+  sentAt        DateTime?
+  createdAt     DateTime       @default(now())
+
+  brand         Brand          @relation(fields: [brandId], references: [id], onDelete: Cascade)
+
+  @@index([brandId])
+  @@index([status])
+}
+
+model Note {
+  id        String   @id @default(cuid())
+  brandId   String
+  author    String   @default("Team")
+  content   String
+  createdAt DateTime @default(now())
+
+  brand     Brand    @relation(fields: [brandId], references: [id], onDelete: Cascade)
+
+  @@index([brandId])
+}
+
+model Activity {
+  id        String   @id @default(cuid())
+  brandId   String?
+  userId    String?
+  type      String   // "STATUS_CHANGE", "RESEARCH_RUN", "DRAFT_GENERATED", "APPROVED", "EMAIL_SENT"
+  title     String
+  details   String?
+  createdAt DateTime @default(now())
+
+  brand     Brand?   @relation(fields: [brandId], references: [id], onDelete: Cascade)
+  user      User?    @relation(fields: [userId], references: [id], onDelete: SetNull)
+
+  @@index([brandId])
+}
+
+model Campaign {
+  id          String   @id @default(cuid())
+  name        String
+  description String?
+  targetSector String?
+  brandsCount Int      @default(0)
+  sentCount   Int      @default(0)
+  replyCount  Int      @default(0)
+  createdAt   DateTime @default(now())
+  updatedAt   DateTime @updatedAt
+}
+
+model UserSettings {
+  id             String   @id @default("default")
+  activeMailboxId String   @default("management")
+  openaiModel    String   @default("gpt-4o-mini")
+  rateLimitSec   Int      @default(30)
+  dailyCap       Int      @default(100)
+  agencyContext  String?
+  createdAt      DateTime @default(now())
+  updatedAt      DateTime @updatedAt
+}

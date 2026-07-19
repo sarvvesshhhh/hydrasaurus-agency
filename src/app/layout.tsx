@@ -27,8 +27,36 @@ const jetbrainsMono = JetBrains_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "HYDRASAURUS - Elite Creator Infrastructure",
-  description: "Immersive RP Storytelling & High-Retention Gaming",
+  metadataBase: new URL('https://hydrasaurusagency.in'),
+  title: {
+    default: 'Hydrasaurus Agency | Gaming Talent Management, Esports & Creator Partnerships',
+    template: '%s | Hydrasaurus Agency'
+  },
+  description: 'Hydrasaurus Agency is a gaming talent management agency specializing in creators, live streamers, brand partnerships, sponsorships, and creator growth.',
+  openGraph: {
+    title: 'Hydrasaurus Agency | Gaming Talent Management & Creator Partnerships',
+    description: 'Elevate your brand with Hydrasaurus Agency. We manage top-tier gaming creators and live streamers, executing high-impact sponsorships and campaigns.',
+    url: 'https://hydrasaurusagency.in',
+    siteName: 'Hydrasaurus Agency',
+    locale: 'en_IN',
+    type: 'website',
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'Hydrasaurus Agency | Gaming Talent Management & Partnerships',
+    description: 'Hydrasaurus Agency connects premium brands with leading gaming creators and live streamers.',
+  },
+  robots: {
+    index: true,
+    follow: true,
+    googleBot: {
+      index: true,
+      follow: true,
+      'max-video-preview': -1,
+      'max-image-preview': 'large',
+      'max-snippet': -1,
+    },
+  },
 };
 
 export default function RootLayout({
