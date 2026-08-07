@@ -256,7 +256,52 @@ export const rosterData: Record<string, Creator> = {
     youtubeUrl: "https://youtube.com/@OfficialRadBriefingGaming",
     kickUrl: "https://kick.com/radbriefing",
     isKickPartner: true
+  },
+  berry: {
+    slug: "berry",
+    name: "Berry",
+    subscribers: "22.6K",
+    youtubeHandle: "@911_berry",
+    youtubeUrl: "https://youtube.com/@911_berry",
+    kickUrl: "https://kick.com/911_berry",
+    role: "FPS & Livestreaming Creator",
+    bio: "High-energy gaming content creator and official Kick partner streaming GTA RP & FPS titles.",
+    isKickPartner: true
+  },
+  nishekbeniwal: {
+    slug: "nishekbeniwal",
+    name: "Nishek Beniwal",
+    subscribers: "11.2K",
+    youtubeHandle: "@nishekbeniwal",
+    youtubeUrl: "https://youtube.com/@nishekbeniwal",
+    kickUrl: "https://kick.com/nishekbeniwal",
+    role: "Esports & Livestreaming Creator",
+    bio: "Competitive gaming & livestreaming specialist with an engaging community across YouTube and Kick.",
+    isKickPartner: true
+  },
+  thefarmer: {
+    slug: "thefarmer",
+    name: "The Farmer",
+    subscribers: "15.1K",
+    youtubeHandle: "@thefarmer365",
+    youtubeUrl: "https://youtube.com/@thefarmer365",
+    kickUrl: "https://kick.com/thefarmer365",
+    role: "Variety Gaming & Content Creator",
+    bio: "Dynamic gaming content creator delivering high-octane livestreams and community events.",
+    isKickPartner: true
+  },
+  deewaygaming: {
+    slug: "deewaygaming",
+    name: "DeeWay Gaming",
+    subscribers: "92.1K",
+    youtubeHandle: "@deewaygaming",
+    youtubeUrl: "https://youtube.com/@deewaygaming",
+    kickUrl: "https://kick.com/deeway-gaming",
+    role: "Gaming & Entertainment Streamer",
+    bio: "Top-tier gaming streamer with 92K+ subscribers, known for immersive gameplay and community entertainment.",
+    isKickPartner: true
   }
 };
+
 
 export const rosterArray = Object.values(rosterData);
