@@ -3,8 +3,10 @@
 import React, { useState, useEffect } from 'react';
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
+import { UserButton, useUser, SignOutButton } from '@clerk/nextjs';
 import { setActiveRoleAction } from './actions';
 import { UserRole } from '@/lib/outreach/types';
+import { isEmailAdmin } from '@/lib/auth-config';
 
 interface NavItem {
   name: string;
@@ -17,11 +19,62 @@ export default function OutreachLayout({ children }: { children: React.ReactNode
   const pathname = usePathname();
   const [role, setRole] = useState<UserRole>('ADMIN');
   const [sidebarOpen, setSidebarOpen] = useState(true);
+  const { user, isLoaded } = useUser();
 
   const handleRoleChange = async (newRole: UserRole) => {
     setRole(newRole);
     await setActiveRoleAction(newRole);
   };
+
+  // 1. Loading state while Clerk initializes
+  if (!isLoaded) {
+    return (
+      <div className="min-h-screen bg-[#070709] flex flex-col items-center justify-center text-white">
+        <div className="w-8 h-8 border-2 border-red-500 border-t-transparent rounded-full animate-spin mb-4" />
+        <p className="text-xs font-mono text-gray-400">Verifying Administrative Access...</p>
+      </div>
+    );
+  }
+
+  // 2. Email Whitelist Authorization Guard
+  const userEmails = user?.emailAddresses.map(e => e.emailAddress) || [];
+  const isAuthorizedAdmin = userEmails.some(email => isEmailAdmin(email));
+
+  if (!isAuthorizedAdmin) {
+    return (
+      <div className="min-h-screen bg-[#070709] text-white flex items-center justify-center p-6 relative z-30">
+        <div className="max-w-md w-full bg-[#0B0B0E] border border-red-500/30 rounded-2xl p-8 shadow-2xl text-center space-y-6">
+          <div className="w-16 h-16 rounded-full bg-red-500/10 border border-red-500/20 flex items-center justify-center mx-auto text-red-500 shadow-lg shadow-red-500/10">
+            <span className="material-symbols-outlined text-3xl">lock</span>
+          </div>
+          <div className="space-y-2">
+            <h2 className="text-xl font-extrabold tracking-tight text-white uppercase">Restricted Admin Area</h2>
+            <p className="text-xs text-gray-400 leading-relaxed">
+              The Outreach AI CRM portal is restricted strictly to authorized Hydrasaurus Agency administrative accounts.
+            </p>
+          </div>
+          <div className="bg-black/50 border border-white/10 rounded-xl p-3.5 text-xs font-mono text-gray-300 text-left space-y-1">
+            <div className="text-[10px] text-gray-500 uppercase tracking-wider">Signed in as</div>
+            <div className="text-red-400 font-bold truncate">{user?.primaryEmailAddress?.emailAddress || 'Unknown User'}</div>
+          </div>
+          <div className="pt-2 flex flex-col gap-3">
+            <Link
+              href="/"
+              className="w-full py-3 rounded-xl bg-white/10 hover:bg-white/20 text-white text-xs font-bold transition-all text-center"
+            >
+              Return to Public Website
+            </Link>
+            <SignOutButton>
+              <button className="w-full py-3 rounded-xl bg-red-600/20 hover:bg-red-600/30 border border-red-500/40 text-red-400 text-xs font-bold transition-all cursor-pointer">
+                Sign Out & Switch Account
+              </button>
+            </SignOutButton>
+          </div>
+        </div>
+      </div>
+    );
+  }
+
 
   const navItems: NavItem[] = [
     { name: 'Dashboard', href: '/outreach', icon: 'dashboard' },
@@ -101,11 +154,14 @@ export default function OutreachLayout({ children }: { children: React.ReactNode
           </div>
 
           {/* User Profile */}
-          <div className="w-8 h-8 rounded-full bg-gradient-to-tr from-red-600 to-amber-500 p-0.5">
-            <div className="w-full h-full bg-[#0B0B0E] rounded-full flex items-center justify-center text-xs font-bold text-white">
-              HA
-            </div>
-          </div>
+          <UserButton 
+            appearance={{
+              elements: {
+                avatarBox: "w-8 h-8 ring-2 ring-red-500/50 hover:ring-red-500 transition-all"
+              }
+            }}
+          />
+
         </div>
       </header>
 

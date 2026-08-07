@@ -2,9 +2,11 @@
 
 import { useState, useEffect } from 'react';
 import Link from 'next/link';
+import { useUser, SignInButton, UserButton } from "@clerk/nextjs";
 
 export default function Navbar({ sidebarOpen }: { sidebarOpen: boolean }) {
   const [scrolled, setScrolled] = useState(false);
+  const { isSignedIn, isLoaded } = useUser();
 
   useEffect(() => {
     const handleScroll = () => {
@@ -48,14 +50,34 @@ export default function Navbar({ sidebarOpen }: { sidebarOpen: boolean }) {
         <Link href="/logistics" className="font-label-caps text-[10px] text-secondary hover:text-white transition-colors uppercase">
           Logistics
         </Link>
+        {isLoaded && isSignedIn && (
+          <Link href="/outreach" className="font-label-caps text-[10px] text-red-400 hover:text-red-300 transition-colors uppercase font-bold">
+            Outreach CRM
+          </Link>
+        )}
       </div>
-      <div className="flex items-center gap-8">
-        <button className="hidden md:block font-label-caps text-[10px] text-secondary hover:text-white transition-colors uppercase cursor-pointer">
-          Client Portal
-        </button>
+      <div className="flex items-center gap-6">
+        {isLoaded && !isSignedIn && (
+          <SignInButton mode="modal">
+            <button className="text-white font-label-caps text-[10px] px-5 py-2.5 border border-white/20 hover:bg-white hover:text-black transition-all duration-300 uppercase cursor-pointer text-center">
+              Sign In
+            </button>
+          </SignInButton>
+        )}
+
+        {isLoaded && isSignedIn && (
+          <UserButton 
+            appearance={{
+              elements: {
+                avatarBox: "w-8 h-8 ring-2 ring-red-500/40 hover:ring-red-500 transition-all"
+              }
+            }}
+          />
+        )}
+
         <Link 
           href="/contact" 
-          className="text-white font-label-caps text-[10px] px-6 py-3 border border-white/20 hover:bg-white hover:text-black transition-all duration-300 uppercase cursor-pointer text-center"
+          className="text-white font-label-caps text-[10px] px-6 py-3 bg-red-600 hover:bg-red-500 transition-all duration-300 uppercase cursor-pointer text-center font-bold shadow-lg shadow-red-600/20"
         >
           Inquire
         </Link>
@@ -63,4 +85,3 @@ export default function Navbar({ sidebarOpen }: { sidebarOpen: boolean }) {
     </nav>
   );
 }
-

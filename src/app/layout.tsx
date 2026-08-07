@@ -1,3 +1,4 @@
+import { ClerkProvider } from "@clerk/nextjs";
 import type { Metadata } from "next";
 import { Sora, Hanken_Grotesk, JetBrains_Mono } from "next/font/google";
 import "./globals.css";
@@ -65,19 +66,22 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html
-      lang="en"
-      className={`${sora.variable} ${hankenGrotesk.variable} ${jetbrainsMono.variable} h-full antialiased dark`}
-    >
-      <body className="min-h-full flex flex-col bg-void-black text-on-surface">
-        <AmbientBackground />
-        <FilmGrain />
-        <Preloader />
-        <CustomCursor />
-        <BackgroundCanvas />
-        <ClientLayout>{children}</ClientLayout>
-      </body>
-    </html>
+    <ClerkProvider>
+      <html
+        lang="en"
+        className={`${sora.variable} ${hankenGrotesk.variable} ${jetbrainsMono.variable} h-full antialiased dark`}
+      >
+        <body className="min-h-full flex flex-col bg-[#070709] text-on-surface">
+          <AmbientBackground />
+          <FilmGrain />
+          <Preloader />
+          <CustomCursor />
+          <BackgroundCanvas />
+          <ClientLayout>{children}</ClientLayout>
+        </body>
+      </html>
+    </ClerkProvider>
   );
 }
+
 

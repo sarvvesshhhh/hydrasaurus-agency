@@ -2,10 +2,12 @@
 
 import { revalidatePath } from 'next/cache';
 import { cookies } from 'next/headers';
+import { currentUser } from '@clerk/nextjs/server';
 import { prisma } from '@/lib/db';
 import { runAIBrandResearch, generateAIEmailDraft } from '@/lib/outreach/openai';
 import { sendTestEmail, processOutboundQueue, syncReplies } from '@/lib/outreach/zoho';
 import { UserRole } from '@/lib/outreach/types';
+import { isEmailAdmin } from '@/lib/auth-config';
 
 /**
  * Gets active session user role from cookies
@@ -27,14 +29,22 @@ export async function setActiveRoleAction(role: UserRole) {
 }
 
 /**
- * RBAC Permission Guard
+ * RBAC Permission Guard & Admin Whitelist Verification
  */
 async function enforcePermission(allowedRoles: UserRole[]) {
+  const user = await currentUser();
+  const userEmail = user?.emailAddresses[0]?.emailAddress;
+
+  if (!isEmailAdmin(userEmail)) {
+    throw new Error(`403 Forbidden: Account (${userEmail || 'Unauthenticated'}) is not an authorized administrator.`);
+  }
+
   const currentRole = await getActiveRole();
   if (!allowedRoles.includes(currentRole)) {
     throw new Error(`403 Forbidden: Your role (${currentRole}) is not permitted to perform this action.`);
   }
 }
+
 
 // ============================================================================
 // MANUAL COMPOSE MAIL ACTION
