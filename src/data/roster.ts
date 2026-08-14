@@ -262,6 +262,7 @@ export const rosterData: Record<string, Creator> = {
     name: "Berry",
     subscribers: "22.6K",
     youtubeHandle: "@911_berry",
+    youtubeChannelId: "UCKwZyDUEJvzb-K-FJ1Winbw",
     youtubeUrl: "https://youtube.com/@911_berry",
     kickUrl: "https://kick.com/911_berry",
     role: "FPS & Livestreaming Creator",
@@ -273,6 +274,7 @@ export const rosterData: Record<string, Creator> = {
     name: "Nishek Beniwal",
     subscribers: "11.2K",
     youtubeHandle: "@nishekbeniwal",
+    youtubeChannelId: "UCQ7oT_7wFrbcrWtqFae5i9Q",
     youtubeUrl: "https://youtube.com/@nishekbeniwal",
     kickUrl: "https://kick.com/nishekbeniwal",
     role: "Esports & Livestreaming Creator",
@@ -284,6 +286,7 @@ export const rosterData: Record<string, Creator> = {
     name: "The Farmer",
     subscribers: "15.1K",
     youtubeHandle: "@thefarmer365",
+    youtubeChannelId: "UCdb-zj1WKHFlnBZj8OymsAg",
     youtubeUrl: "https://youtube.com/@thefarmer365",
     kickUrl: "https://kick.com/thefarmer365",
     role: "Variety Gaming & Content Creator",
@@ -295,13 +298,39 @@ export const rosterData: Record<string, Creator> = {
     name: "DeeWay Gaming",
     subscribers: "92.1K",
     youtubeHandle: "@deewaygaming",
+    youtubeChannelId: "UC1rDFU7prQbD74DKiyICNkw",
     youtubeUrl: "https://youtube.com/@deewaygaming",
     kickUrl: "https://kick.com/deeway-gaming",
     role: "Gaming & Entertainment Streamer",
     bio: "Top-tier gaming streamer with 92K+ subscribers, known for immersive gameplay and community entertainment.",
+    isKickPartner: true
+  },
+  sirishamilani: {
+    slug: "sirishamilani",
+    name: "Sirisha Milani",
+    subscribers: "10.3K",
+    youtubeHandle: "@SirishaMilani",
+    youtubeChannelId: "UCxfpdOu-ULM4pdDZuZ77bcg",
+    youtubeUrl: "https://www.youtube.com/@SirishaMilani",
+    kickUrl: "https://kick.com/sirishamilani",
+    role: "Gaming & Livestreaming Creator",
+    bio: "High-energy gaming and livestreaming creator streaming interactive gameplay across YouTube and Kick.",
+    isKickPartner: true
+  },
+  nikitaplayz: {
+    slug: "nikitaplayz",
+    name: "Nikita Playz",
+    subscribers: "8.4K",
+    youtubeHandle: "@nikita.playzz",
+    youtubeChannelId: "UCWtc-YQ3fdALuwzO3DPhing",
+    youtubeUrl: "https://youtube.com/@nikita.playzz",
+    kickUrl: "https://kick.com/nikita_playzz",
+    role: "Gaming & Content Creator",
+    bio: "Passionate gaming streamer and official Kick partner delivering engaging livestreams and community entertainment.",
     isKickPartner: true
   }
 };
 
 
 export const rosterArray = Object.values(rosterData);
+

@@ -3,6 +3,7 @@
 import React, { useState, useEffect } from 'react';
 import Link from 'next/link';
 import { rosterArray, rosterData } from '@/data/roster';
+import { submitPitch } from '@/app/actions/submitPitch';
 
 const COMMAND_NODES = {
   core: {
@@ -177,9 +178,40 @@ export default function Home() {
     }
   };
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const [terminalStatus, setTerminalStatus] = useState<'idle' | 'transmitting' | 'success' | 'error'>('idle');
+  const [terminalError, setTerminalError] = useState<string | null>(null);
+  const [entityName, setEntityName] = useState('');
+  const [entityEmail, setEntityEmail] = useState('');
+  const [entityDetails, setEntityDetails] = useState('');
+
+  const handleTerminalSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    alert('Terminal uplink secured. Dossier transmitted successfully.');
+    if (!entityEmail || !entityDetails) return;
+    
+    setTerminalStatus('transmitting');
+    setTerminalError(null);
+
+    const formData = new FormData();
+    formData.append('entityName', entityName || 'Direct Entity');
+    formData.append('email', entityEmail);
+    formData.append('details', entityDetails);
+    formData.append('source', 'Home Terminal');
+
+    try {
+      const res = await submitPitch(null, formData);
+      if (res?.success) {
+        setTerminalStatus('success');
+        setEntityName('');
+        setEntityEmail('');
+        setEntityDetails('');
+      } else {
+        setTerminalStatus('error');
+        setTerminalError(res?.error || 'Transmission failed. Please check network uplink.');
+      }
+    } catch (err: any) {
+      setTerminalStatus('error');
+      setTerminalError(err?.message || 'Transmission failed.');
+    }
   };
 
   return (
@@ -761,46 +793,95 @@ export default function Home() {
             </p>
           </div>
           <form 
-            onSubmit={handleSubmit}
+            onSubmit={handleTerminalSubmit}
             className="flex flex-col gap-8 w-full max-w-lg md:ml-auto border border-white/20 p-8 bg-void-black font-label-caps"
           >
             <div className="border-b border-white/10 pb-4 mb-4 flex justify-between items-center">
               <span className="text-[10px] text-[#c8102e] tracking-widest uppercase font-bold">// Terminal Access Protocol</span>
-              <span className="w-2 h-2 bg-[#c8102e] animate-pulse"></span>
+              <span className={`w-2 h-2 rounded-full ${terminalStatus === 'transmitting' ? 'bg-amber-400 animate-ping' : terminalStatus === 'success' ? 'bg-emerald-500' : 'bg-[#c8102e] animate-pulse'}`}></span>
             </div>
-            <div className="relative group">
-              <span className="absolute left-0 top-4 text-secondary text-xs">&gt;</span>
-              <input 
-                className="w-full bg-transparent border-b border-white/20 pl-6 py-4 text-white focus:outline-none focus:border-[#c8102e] transition-colors text-xs placeholder-secondary/50 uppercase" 
-                placeholder="Entity Identification" 
-                type="text"
-                required
-              />
-            </div>
-            <div className="relative group">
-              <span className="absolute left-0 top-4 text-secondary text-xs">&gt;</span>
-              <input 
-                className="w-full bg-transparent border-b border-white/20 pl-6 py-4 text-white focus:outline-none focus:border-[#c8102e] transition-colors text-xs placeholder-secondary/50 uppercase" 
-                placeholder="Secure Communications Node" 
-                type="email"
-                required
-              />
-            </div>
-            <div className="relative group">
-              <span className="absolute left-0 top-4 text-secondary text-xs">&gt;</span>
-              <textarea 
-                className="w-full bg-transparent border-b border-white/20 pl-6 py-4 text-white focus:outline-none focus:border-[#c8102e] transition-colors resize-none text-xs placeholder-secondary/50 uppercase" 
-                placeholder="Operational Directive Details" 
-                rows={3}
-                required
-              ></textarea>
-            </div>
-            <button 
-              className="text-white text-[10px] px-8 py-4 bg-transparent border border-[#c8102e]/50 hover:bg-[#c8102e] hover:text-white transition-all duration-300 uppercase tracking-widest w-max mt-8 flex items-center gap-4 group cursor-pointer font-bold" 
-              type="submit"
-            >
-              Transmit Dossier <span className="material-symbols-outlined text-sm group-hover:translate-x-2 transition-transform">arrow_forward</span>
-            </button>
+
+            {terminalStatus === 'success' ? (
+              <div className="space-y-6 py-6 text-center">
+                <div className="w-12 h-12 rounded-full bg-emerald-500/10 border border-emerald-500/30 flex items-center justify-center mx-auto text-emerald-400">
+                  <span className="material-symbols-outlined text-2xl">check_circle</span>
+                </div>
+                <div className="space-y-2">
+                  <div className="text-white text-sm font-bold tracking-wider uppercase">
+                    // Transmission Confirmed
+                  </div>
+                  <p className="text-[11px] text-gray-400 lowercase font-normal leading-relaxed">
+                    Dossier ingested. Hydrasaurus Agency leadership will evaluate metrics and initiate contact shortly.
+                  </p>
+                </div>
+                <button
+                  type="button"
+                  onClick={() => setTerminalStatus('idle')}
+                  className="text-[10px] text-white px-5 py-2.5 border border-white/20 hover:border-[#c8102e] hover:text-[#c8102e] transition-all uppercase tracking-widest cursor-pointer mt-2"
+                >
+                  Transmit Another Dossier
+                </button>
+              </div>
+            ) : (
+              <>
+                {terminalStatus === 'error' && (
+                  <div className="text-red-400 text-xs border border-red-500/30 bg-red-500/10 p-3 flex items-center gap-2">
+                    <span className="material-symbols-outlined text-sm">error</span>
+                    <span>{terminalError || 'Transmission error. Retry transmission.'}</span>
+                  </div>
+                )}
+                <div className="relative group">
+                  <span className="absolute left-0 top-4 text-secondary text-xs">&gt;</span>
+                  <input 
+                    className="w-full bg-transparent border-b border-white/20 pl-6 py-4 text-white focus:outline-none focus:border-[#c8102e] transition-colors text-xs placeholder-secondary/50 uppercase" 
+                    placeholder="Entity Identification (Brand / Creator Name)" 
+                    type="text"
+                    value={entityName}
+                    onChange={(e) => setEntityName(e.target.value)}
+                    required
+                  />
+                </div>
+                <div className="relative group">
+                  <span className="absolute left-0 top-4 text-secondary text-xs">&gt;</span>
+                  <input 
+                    className="w-full bg-transparent border-b border-white/20 pl-6 py-4 text-white focus:outline-none focus:border-[#c8102e] transition-colors text-xs placeholder-secondary/50 uppercase" 
+                    placeholder="Secure Communications Node (Your Email)" 
+                    type="email"
+                    value={entityEmail}
+                    onChange={(e) => setEntityEmail(e.target.value)}
+                    required
+                  />
+                </div>
+                <div className="relative group">
+                  <span className="absolute left-0 top-4 text-secondary text-xs">&gt;</span>
+                  <textarea 
+                    className="w-full bg-transparent border-b border-white/20 pl-6 py-4 text-white focus:outline-none focus:border-[#c8102e] transition-colors resize-none text-xs placeholder-secondary/50 uppercase" 
+                    placeholder="Operational Directive Details (Project Scope / Campaign / Bottlenecks)" 
+                    rows={3}
+                    value={entityDetails}
+                    onChange={(e) => setEntityDetails(e.target.value)}
+                    required
+                  ></textarea>
+                </div>
+                <button 
+                  className="text-white text-[10px] px-8 py-4 bg-transparent border border-[#c8102e]/50 hover:bg-[#c8102e] hover:text-white transition-all duration-300 uppercase tracking-widest w-max mt-4 flex items-center gap-4 group cursor-pointer font-bold disabled:opacity-50 disabled:cursor-not-allowed" 
+                  type="submit"
+                  disabled={terminalStatus === 'transmitting'}
+                >
+                  {terminalStatus === 'transmitting' ? (
+                    <>
+                      <span>Transmitting Dossier...</span>
+                      <span className="w-3 h-3 border-2 border-white/40 border-t-white rounded-full animate-spin"></span>
+                    </>
+                  ) : (
+                    <>
+                      <span>Transmit Dossier</span>
+                      <span className="material-symbols-outlined text-sm group-hover:translate-x-2 transition-transform">arrow_forward</span>
+                    </>
+                  )}
+                </button>
+              </>
+            )}
           </form>
         </div>
       </section>

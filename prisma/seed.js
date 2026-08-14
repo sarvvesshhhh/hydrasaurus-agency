@@ -106,6 +106,26 @@ async function main() {
       category: 'Mobile Gaming / BGMI',
       bio: 'High-energy mobile gaming creator with a passionate youth audience.',
       isActive: true
+    },
+    {
+      name: 'Sirisha Milani',
+      platform: 'YouTube / Kick',
+      subscribers: '10.3K',
+      followers: '8K',
+      avgViews: '6K',
+      category: 'Gaming / Livestreaming',
+      bio: 'High-energy gaming and livestreaming creator streaming interactive gameplay across YouTube and Kick.',
+      isActive: true
+    },
+    {
+      name: 'Nikita Playz',
+      platform: 'YouTube / Kick',
+      subscribers: '8.4K',
+      followers: '6.5K',
+      avgViews: '4.5K',
+      category: 'Gaming / Livestreaming',
+      bio: 'Passionate gaming streamer and official Kick partner delivering engaging livestreams and community entertainment.',
+      isActive: true
     }
   ];
 
