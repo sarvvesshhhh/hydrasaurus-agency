@@ -16,7 +16,7 @@ const TEMPLATES = [
 
 I hope you're having a great week.
 
-I'm reaching out from Hydrasaurus Agency (Gaming Creator Management & Livestream Operations). We represent 25+ top gaming creators with 570K+ combined audience across YouTube & Kick.
+I'm reaching out from Hydrasaurus Agency (Gaming Creator Management & Livestream Operations). We represent 27 top gaming creators with 580K+ combined audience across YouTube & Kick.
 
 We've been following {BrandName}'s recent campaigns and believe our creator roster would be a perfect fit for an integrated livestream sponsorship & product placement campaign.
 

@@ -81,7 +81,7 @@ export default function OutreachLayout({ children }: { children: React.ReactNode
     { name: 'Compose Mail', href: '/outreach/compose', icon: 'edit_square', badge: 'New' },
     { name: 'Brand CRM', href: '/outreach/brands', icon: 'business_center' },
     { name: 'AI Brand Discovery', href: '/outreach/discovery', icon: 'travel_explore', badge: 'AI' },
-    { name: 'Creators Roster', href: '/outreach/creators', icon: 'groups', badge: '25+' },
+    { name: 'Creators Roster', href: '/outreach/creators', icon: 'groups', badge: '27+' },
     { name: 'Knowledge Base', href: '/outreach/knowledge', icon: 'auto_stories', badge: 'RAG' },
     { name: 'Human Review Queue', href: '/outreach/review', icon: 'rate_review', badge: 'Review' },
     { name: 'Outbound Queue', href: '/outreach/queue', icon: 'forward_to_inbox' },
@@ -209,13 +209,13 @@ export default function OutreachLayout({ children }: { children: React.ReactNode
             <div className="m-3 p-3 rounded-xl bg-gradient-to-br from-red-950/40 to-black border border-red-500/20 space-y-2">
               <div className="flex items-center justify-between text-[11px] font-semibold text-gray-300">
                 <span>Agency Reach</span>
-                <span className="text-red-400 font-mono font-bold">570K+</span>
+                <span className="text-red-400 font-mono font-bold">580K+</span>
               </div>
               <div className="w-full bg-white/10 h-1.5 rounded-full overflow-hidden">
                 <div className="bg-red-500 h-full w-[85%] rounded-full"></div>
               </div>
               <div className="text-[10px] text-gray-400 flex items-center justify-between">
-                <span>25+ Creators</span>
+                <span>27 Creators</span>
                 <span>YT & Kick</span>
               </div>
             </div>

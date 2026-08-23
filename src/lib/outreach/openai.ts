@@ -323,7 +323,7 @@ export async function generateAIEmailDraft(brandId: string): Promise<EmailDraft>
   const recipientName = brand.contacts?.[0]?.name || 'Marketing Team';
   const ragContext = await queryKnowledgeBase(brand.category);
 
-  const systemPrompt = `You are the Commercial Director of Hydrasaurus Agency (Gaming Creator Management & Livestream Operations, 25+ creators, 570K+ combined audience on YouTube & Kick).
+  const systemPrompt = `You are the Commercial Director of Hydrasaurus Agency (Gaming Creator Management & Livestream Operations, 27 creators, 580K+ combined audience on YouTube & Kick).
 Write a hyper-personalized sponsorship pitch email (Version ${nextVersion}).
 STRICT REQUIREMENTS:
 - Maximum 150 words.
