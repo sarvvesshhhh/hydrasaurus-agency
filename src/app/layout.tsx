@@ -35,9 +35,9 @@ export const metadata: Metadata = {
   },
   description: 'Hydrasaurus Agency is a gaming talent management agency specializing in creators, live streamers, brand partnerships, sponsorships, and creator growth.',
   icons: {
-    icon: '/favicon.png?v=2',
-    shortcut: '/favicon.png?v=2',
-    apple: '/favicon.png?v=2',
+    icon: '/favicon.png?v=3',
+    shortcut: '/favicon.png?v=3',
+    apple: '/favicon.png?v=3',
   },
   openGraph: {
     title: 'Hydrasaurus Agency | Gaming Talent Management & Creator Partnerships',
